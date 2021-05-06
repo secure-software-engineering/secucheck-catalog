@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WebGoatSpecifications/WebGoatSpecifications.iml" filepath="$PROJECT_DIR$/WebGoatSpecifications/WebGoatSpecifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.iml" filepath="$PROJECT_DIR$/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.iml" filepath="$PROJECT_DIR$/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications/de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-project/demo-project.iml" filepath="$PROJECT_DIR$/demo-project/demo-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-project-specification/demo-project-specification.iml" filepath="$PROJECT_DIR$/demo-project-specification/demo-project-specification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/secucheck-catalog.iml" filepath="$PROJECT_DIR$/.idea/secucheck-catalog.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.fraunhofer.iem.secucheck</groupId>
+    <artifactId>secucheck-catalog</artifactId>
+    <packaging>pom</packaging>
+    <version>v1.0.0</version>
+    <name>SecuCheck  for secucheck SC-1.0.0</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <modules>
+        <module>de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog</module>
+        <module>de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications</module>
+        <module>demo-project</module>
+        <module>demo-project-specification</module>
+        <module>WebGoatSpecifications</module>
+    </modules>
+
+</project>
