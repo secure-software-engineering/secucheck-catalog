@@ -10,5 +10,4 @@ target/
 out/
 .*
 !/.gitignore
-*.txt
 /bin/
