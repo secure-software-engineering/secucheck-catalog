@@ -21,6 +21,7 @@
         <module>demo-project</module>
         <module>demo-project-specification</module>
         <module>WebGoatSpecifications</module>
+        <module>PetClinicSpecifications</module>
     </modules>
 
 
