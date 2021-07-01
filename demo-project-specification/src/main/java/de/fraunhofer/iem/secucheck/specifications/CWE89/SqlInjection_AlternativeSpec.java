@@ -1,11 +1,13 @@
-package de.fraunhofer.iem.secucheck.specifications;
+package de.fraunhofer.iem.secucheck.specifications.CWE89;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSignatureConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.MethodSignature;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
@@ -20,16 +22,18 @@ import java.util.List;
  * elements that could modify the intended SQL command when it is sent to a downstream component.
  */
 @FluentTQLSpecificationClass
-public class CWE89_SqlInjection implements FluentTQLUserInterface {
+public class SqlInjection_AlternativeSpec implements FluentTQLUserInterface {
 
     /**
      * Source
      */
-    public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.DatabaseController: " +
-                    "java.lang.String showTasks(" +
-                    "org.springframework.ui.Model," +
-                    "java.lang.String)")
+    public MethodSignature sourceMethodSign = new MethodSignatureConfigurator()
+            .atClass("de.fraunhofer.iem.secucheck.todolist.controllers.DatabaseController")
+            .returns("java.lang.String")
+            .named("showTasks")
+            .accepts("org.springframework.ui.Model,java.lang.String")
+            .configure();
+    public Method sourceMethod = new MethodConfigurator(sourceMethodSign)
             .out().param(1)
             .configure();
 
@@ -58,7 +62,13 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
     /**
      * Sink
      */
-    public Method sinkMethod2 = new MethodConfigurator("java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)")
+    public MethodSignature sinkMethod2Sign = new MethodSignatureConfigurator()
+            .atClass("java.sql.Statement")
+            .returns("java.sql.ResultSet")
+            .named("executeQuery")
+            .accepts("java.lang.String")
+            .configure();
+    public Method sinkMethod2 = new MethodConfigurator(sinkMethod2Sign)
             .in().param(0)
             .configure();
 
@@ -68,21 +78,21 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
      * @return Internal FluentTQL specifications
      */
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
-        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF1")
+        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF1_WithMethodSign")
                 .from(sourceMethod)
                 .to(sinkMethod)
                 .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String pattern'")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
-        TaintFlowQuery myTF2 = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF2")
+        TaintFlowQuery myTF2 = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF2_WithMethodSign")
                 .from(sourceMethod2)
                 .to(sinkMethod)
                 .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String shortname'")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
-        TaintFlowQuery myTF3 = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF3")
+        TaintFlowQuery myTF3 = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF3_WithMethodSign")
                 .from(sourceMethod2)
                 .to(sinkMethod2)
                 .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String shortname'")
@@ -96,4 +106,5 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
 
         return myFluentTQLSpecs;
     }
+
 }

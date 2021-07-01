@@ -1,11 +1,13 @@
-package de.fraunhofer.iem.secucheck.specifications;
+package de.fraunhofer.iem.secucheck.specifications.CWE20;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSignatureConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.MethodSignature;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
@@ -13,13 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * CWE-79: Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)
+ * CWE-20: Improper Input Validation
  * <p>
- * The software does not neutralize or incorrectly neutralizes user-controllable input before
- * it is placed in output that is used as a web page that is served to other users.
+ * The product receives input or data, but it does not validate or incorrectly
+ * validates that the input has the properties that are required to process
+ * the data safely and correctly.
  */
 @FluentTQLSpecificationClass
-public class CWE79_CrossSiteScripting implements FluentTQLUserInterface {
+public class ImproperInputValidation_AlternativeSpec implements FluentTQLUserInterface {
 
     /**
      * Source
@@ -34,29 +37,19 @@ public class CWE79_CrossSiteScripting implements FluentTQLUserInterface {
             .out().param(0)
             .configure();
 
-
-    /**
-     * sanitize method is OWASP HTML sanitizer, that sanitizes the special characters, so that SQL Injection does not occur. It is a simple example, For security its better to use
-     * encodeForSQL or make the settings of sanitize method to avoid SQL Injection.
-     */
-    public Method sanitizerMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.LoginController: " +
-                    "de.fraunhofer.iem.secucheck.todolist.model.User NameIt(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.User)")
-            .in().param(0)
-            .out().returnValue()
-            .configure();
-
-
     /**
      * Sink
      */
-    public Method sinkMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.service.UserService: " +
-                    "void saveUserDefault(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.User)")
+    public MethodSignature sinkMethodSign = new MethodSignatureConfigurator()
+            .atClass("de.fraunhofer.iem.secucheck.todolist.service.UserService")
+            .returns("void")
+            .named("saveUserDefault")
+            .accepts("de.fraunhofer.iem.secucheck.todolist.model.User")
+            .configure();
+    public Method sinkMethod = new MethodConfigurator(sinkMethodSign)
             .in().param(0)
             .configure();
+
 
     /**
      * Returns the Internal FluentTQL specification
@@ -64,10 +57,10 @@ public class CWE79_CrossSiteScripting implements FluentTQLUserInterface {
      * @return Internal FluentTQL specifications
      */
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
-        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE79_CrossSiteScripting")
+        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE20_ImproperInputValidation_WithMethodSign")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-79 detected: Cross-site Scripting from untrusted value 'String pattern'")
+                .report("CWE-20 detected: Improper Input Validation from 'User user'")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -76,4 +69,5 @@ public class CWE79_CrossSiteScripting implements FluentTQLUserInterface {
 
         return myFluentTQLSpecs;
     }
+
 }

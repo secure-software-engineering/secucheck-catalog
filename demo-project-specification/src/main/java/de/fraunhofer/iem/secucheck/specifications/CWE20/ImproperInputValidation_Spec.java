@@ -1,4 +1,4 @@
-package de.fraunhofer.iem.secucheck.specifications;
+package de.fraunhofer.iem.secucheck.specifications.CWE20;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
@@ -13,42 +13,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * CWE-311: Missing Encryption of Sensitive Data
+ * CWE-20: Improper Input Validation
  * <p>
- * The software does not encrypt sensitive or critical information before storage or transmission.
+ * The product receives input or data, but it does not validate or incorrectly
+ * validates that the input has the properties that are required to process
+ * the data safely and correctly.
  */
 @FluentTQLSpecificationClass
-public class CWE311_MissingEncryption implements FluentTQLUserInterface {
+public class ImproperInputValidation_Spec implements FluentTQLUserInterface {
 
     /**
      * Source
      */
     public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.NewTaskController: " +
-                    "java.lang.String saveTask(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.Task," +
-                    "org.springframework.web.multipart.MultipartFile," +
-                    "org.springframework.web.servlet.mvc.support.RedirectAttributes)")
+            "de.fraunhofer.iem.secucheck.todolist.controllers.LoginController: " +
+                    "org.springframework.web.servlet.ModelAndView createNewUser(" +
+                    "de.fraunhofer.iem.secucheck.todolist.model.User," +
+                    "org.springframework.validation.BindingResult," +
+                    "javax.servlet.http.HttpServletRequest," +
+                    "javax.servlet.http.HttpServletResponse)")
             .out().param(0)
-            .configure();
-
-    /**
-     * Sanitizer
-     */
-    public Method sanitizerMethod = new MethodConfigurator("de.fraunhofer.iem.secucheck.todolist.controllers.TaskController: " +
-            "java.lang.String encrypt(" +
-            "java.lang.String)")
-            .in().param(0)
-            .out().returnValue()
             .configure();
 
     /**
      * Sink
      */
     public Method sinkMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.repository.TaskRepository: java.lang.Object save(java.lang.Object)")
+            "de.fraunhofer.iem.secucheck.todolist.service.UserService: " +
+                    "void saveUserDefault(" +
+                    "de.fraunhofer.iem.secucheck.todolist.model.User)")
             .in().param(0)
             .configure();
+
 
     /**
      * Returns the Internal FluentTQL specification
@@ -56,10 +52,10 @@ public class CWE311_MissingEncryption implements FluentTQLUserInterface {
      * @return Internal FluentTQL specifications
      */
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
-        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE311_MissingEncryption")
+        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE20_ImproperInputValidation")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-311 detected: Missing Encryption of Sensitive Data from 'Task newTask'")
+                .report("CWE-20 detected: Improper Input Validation from 'User user'")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -68,4 +64,5 @@ public class CWE311_MissingEncryption implements FluentTQLUserInterface {
 
         return myFluentTQLSpecs;
     }
+
 }

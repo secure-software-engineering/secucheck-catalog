@@ -1,4 +1,4 @@
-package de.fraunhofer.iem.secucheck.specifications;
+package de.fraunhofer.iem.secucheck.specifications.CWE643;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
@@ -20,7 +20,7 @@ import java.util.List;
  * neutralizes that input. This allows an attacker to control the structure of the query.
  */
 @FluentTQLSpecificationClass
-public class CWE643_XpathInjection implements FluentTQLUserInterface {
+public class XpathInjection_Spec implements FluentTQLUserInterface {
 
     /**
      * Sources
@@ -68,4 +68,5 @@ public class CWE643_XpathInjection implements FluentTQLUserInterface {
 
         return myFluentTQLSpecs;
     }
+
 }

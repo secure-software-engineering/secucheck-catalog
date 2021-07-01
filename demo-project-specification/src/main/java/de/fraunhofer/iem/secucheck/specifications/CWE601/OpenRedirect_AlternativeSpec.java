@@ -1,11 +1,13 @@
-package de.fraunhofer.iem.secucheck.specifications;
+package de.fraunhofer.iem.secucheck.specifications.CWE601;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSignatureConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.MethodSignature;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
@@ -19,16 +21,18 @@ import java.util.List;
  * an external site, and uses that link in a Redirect. This simplifies phishing attacks.
  */
 @FluentTQLSpecificationClass
-public class CWE601_OpenRedirect implements FluentTQLUserInterface {
+public class OpenRedirect_AlternativeSpec implements FluentTQLUserInterface {
 
     /**
      * Source
      */
-    public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.TaskController: " +
-                    "void redirectToExternalUrl(" +
-                    "javax.servlet.http.HttpServletResponse," +
-                    "java.lang.String)")
+    public MethodSignature sourceMethodSign = new MethodSignatureConfigurator()
+            .atClass("de.fraunhofer.iem.secucheck.todolist.controllers.TaskController")
+            .returns("void")
+            .named("redirectToExternalUrl")
+            .accepts("javax.servlet.http.HttpServletResponse,java.lang.String")
+            .configure();
+    public Method sourceMethod = new MethodConfigurator(sourceMethodSign)
             .out().param(1)
             .configure();
 
@@ -54,19 +58,33 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
     /**
      * Sink
      */
-    public Method sinkMethod = new MethodConfigurator(
-            "javax.servlet.http.HttpServletResponse: " +
-                    "void sendRedirect(" +
-                    "java.lang.String)")
+    public MethodSignature sinkMethodSign = new MethodSignatureConfigurator()
+            .atClass("javax.servlet.http.HttpServletResponse")
+            .returns("void")
+            .named("sendRedirect")
+            .accepts("java.lang.String")
+            .configure();
+    public Method sinkMethod = new MethodConfigurator(sinkMethodSign)
             .in().param(0)
             .configure();
 
-    public Method rp1 = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.model.TaskList: java.util.ArrayList getTaskList()")
+    /**
+     * Required Propagator
+     */
+    public MethodSignature rp1Sign = new MethodSignatureConfigurator()
+            .atClass("de.fraunhofer.iem.secucheck.todolist.model.TaskList")
+            .returns("java.util.ArrayList")
+            .named("getTaskList")
+            .accepts("")
+            .configure();
+    public Method rp1 = new MethodConfigurator(rp1Sign)
             .in().thisObject()
             .out().returnValue()
             .configure();
 
+    /**
+     * Required Propagator
+     */
     public Method rp2 = new MethodConfigurator(
             "java.util.ArrayList: int size()")
             .in().thisObject()
@@ -79,14 +97,14 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
      * @return Internal FluentTQL specifications
      */
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
-        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF1")
+        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF1_WithMethodSign")
                 .from(sourceMethod)
                 .to(sinkMethod)
                 .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'String page'")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
-        TaintFlowQuery myTF2 = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF2")
+        TaintFlowQuery myTF2 = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF2_WithMethodSign")
                 .from(sourceMethod2)
                 .through(rp1)
                 .through(rp2)
@@ -95,7 +113,7 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
-        TaintFlowQuery myTF3 = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF3")
+        TaintFlowQuery myTF3 = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF3_WithMethodSign")
                 .from(sourceMethod3)
                 .to(sinkMethod)
                 .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'HttpServletRequest request'")
@@ -109,4 +127,5 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
 
         return myFluentTQLSpecs;
     }
+
 }

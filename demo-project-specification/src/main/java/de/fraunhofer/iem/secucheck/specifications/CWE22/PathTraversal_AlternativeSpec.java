@@ -1,11 +1,13 @@
-package de.fraunhofer.iem.secucheck.specifications;
+package de.fraunhofer.iem.secucheck.specifications.CWE22;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSignatureConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.MethodSignature;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
@@ -21,17 +23,18 @@ import java.util.List;
  * that can cause the pathname to resolve to a location that is outside of the restricted directory.
  */
 @FluentTQLSpecificationClass
-public class CWE22_PathTraversal implements FluentTQLUserInterface {
+public class PathTraversal_AlternativeSpec implements FluentTQLUserInterface {
 
     /**
      * Source
      */
-    public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.NewTaskController: " +
-                    "java.lang.String saveTask(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.Task," +
-                    "org.springframework.web.multipart.MultipartFile," +
-                    "org.springframework.web.servlet.mvc.support.RedirectAttributes)")
+    public MethodSignature sourceMethodSign = new MethodSignatureConfigurator()
+            .atClass("de.fraunhofer.iem.secucheck.todolist.controllers.NewTaskController")
+            .returns("java.lang.String")
+            .named("saveTask")
+            .accepts("de.fraunhofer.iem.secucheck.todolist.model.Task,org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes")
+            .configure();
+    public Method sourceMethod = new MethodConfigurator(sourceMethodSign)
             .out().param(0)
             .configure();
 
@@ -63,7 +66,7 @@ public class CWE22_PathTraversal implements FluentTQLUserInterface {
      * @return Internal FluentTQL specifications
      */
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
-        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE22_PathTraversal")
+        TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE22_PathTraversal_WithMethodSign")
                 .from(sourceMethod)
                 .notThrough(sanitizerMethod)
                 .to(sinkMethod)
@@ -76,4 +79,5 @@ public class CWE22_PathTraversal implements FluentTQLUserInterface {
 
         return myFluentTQLSpecs;
     }
+
 }
