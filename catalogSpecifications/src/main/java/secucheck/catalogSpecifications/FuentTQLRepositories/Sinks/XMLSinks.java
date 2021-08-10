@@ -1,10 +1,10 @@
 package secucheck.catalogSpecifications.FuentTQLRepositories.Sinks;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSet;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.MethodSet;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
+import secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
 
 /**
  * Multiple Sinks definition for XML.

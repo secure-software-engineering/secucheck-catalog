@@ -1,15 +1,15 @@
 package secucheck.catalogSpecifications.FluentTQLSpecifications.OpenRedirectAttack.CWE601;
 
 import secucheck.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.QueriesSet;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.*;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.QueriesSet;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.*;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;

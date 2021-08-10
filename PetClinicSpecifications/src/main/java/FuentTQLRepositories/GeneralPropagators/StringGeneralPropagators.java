@@ -1,9 +1,9 @@
 package FuentTQLRepositories.GeneralPropagators;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.*;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.annotations.*;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
 
 @FluentTQLRepositoryClass
 public class StringGeneralPropagators {

@@ -1,13 +1,13 @@
 package secucheck.todolistSpecifications;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +27,9 @@ public class CWE78_OsCommandInjection implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.NewTaskController: " +
+            "secucheck.todolist.controllers.NewTaskController: " +
                     "java.lang.String saveTask(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.Task," +
+                    "secucheck.todolist.model.Task," +
                     "org.springframework.web.multipart.MultipartFile," +
                     "org.springframework.web.servlet.mvc.support.RedirectAttributes)")
             .out().param(0)
@@ -39,7 +39,7 @@ public class CWE78_OsCommandInjection implements FluentTQLUserInterface {
      * Sanitizer
      */
     public Method sanitizerMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.NewTaskController: " +
+            "secucheck.todolist.controllers.NewTaskController: " +
                     "java.lang.String correctFileName(" +
                     "java.lang.String)")
             .in().param(0)
@@ -50,9 +50,9 @@ public class CWE78_OsCommandInjection implements FluentTQLUserInterface {
      * Sink
      */
     public Method sinkMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.service.DirectoryStorageService: " +
+            "secucheck.todolist.service.DirectoryStorageService: " +
                     "int getFileSizeOnSystem(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.Task," +
+                    "secucheck.todolist.model.Task," +
                     "java.lang.String)")
             .in().param(0)
             .configure();
@@ -61,9 +61,9 @@ public class CWE78_OsCommandInjection implements FluentTQLUserInterface {
      * Sink
      */
     public Method sinkMethod2 = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.service.DirectoryStorageService: " +
+            "secucheck.todolist.service.DirectoryStorageService: " +
                     "java.lang.String store(org.springframework.web.multipart.MultipartFile," +
-                    "de.fraunhofer.iem.secucheck.todolist.model.Task," +
+                    "secucheck.todolist.model.Task," +
                     "java.lang.String)")
             .in().param(1)
             .configure();

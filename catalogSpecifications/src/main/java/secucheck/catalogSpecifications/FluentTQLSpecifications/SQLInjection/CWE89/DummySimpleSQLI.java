@@ -1,16 +1,16 @@
 package secucheck.catalogSpecifications.FluentTQLSpecifications.SQLInjection.CWE89;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.AnalysisEntryPoint;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.AnalysisEntryPoint;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
+import secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class DummySimpleSQLI implements FluentTQLUserInterface {
 
     @AnalysisEntryPoint
     public Method entryPoint = new MethodSelector(
-            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.SQLInjection.CWE89.SimpleSQLInjection: java.sql.ResultSet getEmployeeInformationWithoutSanitizer()"
+            "secucheck.InternalFluentTQL.catalog.SQLInjection.CWE89.SimpleSQLInjection: java.sql.ResultSet getEmployeeInformationWithoutSanitizer()"
     );
 
     /**

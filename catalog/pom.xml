@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>secucheck-catalog</artifactId>
-        <groupId>de.fraunhofer.iem.secucheck</groupId>
-        <version>v1.1.0</version>
+        <groupId>secucheck</groupId>
+        <version>vAnonymous</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog</artifactId>
+    <artifactId>secucheck.InternalFluentTQL.catalog</artifactId>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

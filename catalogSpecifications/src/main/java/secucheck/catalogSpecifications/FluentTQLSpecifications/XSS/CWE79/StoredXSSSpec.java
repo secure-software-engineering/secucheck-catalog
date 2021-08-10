@@ -1,17 +1,17 @@
 package secucheck.catalogSpecifications.FluentTQLSpecifications.XSS.CWE79;
 
 import secucheck.catalogSpecifications.FuentTQLRepositories.Sinks.ServletSinks;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.ImportAndProcessOnlyStaticFields;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.dsl.annotations.ImportAndProcessOnlyStaticFields;
+import secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
+import secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class StoredXSSSpec implements FluentTQLUserInterface {
      * getLastComment is a source that returns the sensitive data from the database.
      */
     @OutFlowReturnValue
-    public Method source = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.XSS.CWE79.DatabaseForStoredXSS: java.lang.String getLastComment()");
+    public Method source = new MethodSelector("secucheck.InternalFluentTQL.catalog.XSS.CWE79.DatabaseForStoredXSS: java.lang.String getLastComment()");
 
     /**
      * encodeForHTML is a OWASP sanitizer that encodes the HTML related data. Therefore, flow should go through this method to avoid vulnerability.

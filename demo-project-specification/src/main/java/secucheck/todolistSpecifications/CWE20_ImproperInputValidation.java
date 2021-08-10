@@ -3,17 +3,17 @@ package secucheck.todolistSpecifications;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.dsl.annotations.InFlowParam;
+import secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 /**
  * CWE-20: Improper Input Validation
@@ -29,9 +29,9 @@ public class CWE20_ImproperInputValidation implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.LoginController: " +
+            "secucheck.todolist.controllers.LoginController: " +
                     "org.springframework.web.servlet.ModelAndView createNewUser(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.User," +
+                    "secucheck.todolist.model.User," +
                     "org.springframework.validation.BindingResult," +
                     "javax.servlet.http.HttpServletRequest," +
                     "javax.servlet.http.HttpServletResponse)")
@@ -42,9 +42,9 @@ public class CWE20_ImproperInputValidation implements FluentTQLUserInterface {
      * Sink
      */
     public Method sinkMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.service.UserService: " +
+            "secucheck.todolist.service.UserService: " +
                     "void saveUserDefault(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.User)")
+                    "secucheck.todolist.model.User)")
             .in().param(0)
             .configure();
 

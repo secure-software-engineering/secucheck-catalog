@@ -1,9 +1,9 @@
 package secucheck.catalogSpecifications.FuentTQLRepositories.GeneralPropagators;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.GeneralPropagator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
+import secucheck.InternalFluentTQL.dsl.annotations.GeneralPropagator;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
 
 @FluentTQLRepositoryClass
 public class AdditionalGP {

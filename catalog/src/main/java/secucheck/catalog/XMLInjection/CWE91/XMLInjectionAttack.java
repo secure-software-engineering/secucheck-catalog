@@ -31,7 +31,7 @@ import java.io.StringReader;
  * @see <a href="https://wiki.sei.cmu.edu/confluence/display/java/IDS16-J.+Prevent+XML+Injection" target="_blank">XML-Injection example</a>
  */
 public class XMLInjectionAttack extends HttpServlet {
-    private final String xmlFile = "src/main/java/de/fraunhofer/iem/secucheck/InternalFluentTQL/catalog/XMLInjection/CWE91/myOrder.xml";
+    private final String xmlFile = "src/main/java/secucheck/catalog/XMLInjection/CWE91/myOrder.xml";
 
     /**
      * This method returns the order detail from the xml file.

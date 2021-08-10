@@ -1,13 +1,13 @@
 package secucheck.todolistSpecifications;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +24,9 @@ public class CWE311_MissingEncryption implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.NewTaskController: " +
+            "secucheck.todolist.controllers.NewTaskController: " +
                     "java.lang.String saveTask(" +
-                    "de.fraunhofer.iem.secucheck.todolist.model.Task," +
+                    "secucheck.todolist.model.Task," +
                     "org.springframework.web.multipart.MultipartFile," +
                     "org.springframework.web.servlet.mvc.support.RedirectAttributes)")
             .out().param(0)
@@ -35,7 +35,7 @@ public class CWE311_MissingEncryption implements FluentTQLUserInterface {
     /**
      * Sanitizer
      */
-    public Method sanitizerMethod = new MethodConfigurator("de.fraunhofer.iem.secucheck.todolist.controllers.TaskController: " +
+    public Method sanitizerMethod = new MethodConfigurator("secucheck.todolist.controllers.TaskController: " +
             "java.lang.String encrypt(" +
             "java.lang.String)")
             .in().param(0)
@@ -46,7 +46,7 @@ public class CWE311_MissingEncryption implements FluentTQLUserInterface {
      * Sink
      */
     public Method sinkMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.repository.TaskRepository: java.lang.Object save(java.lang.Object)")
+            "secucheck.todolist.repository.TaskRepository: java.lang.Object save(java.lang.Object)")
             .in().param(0)
             .configure();
 

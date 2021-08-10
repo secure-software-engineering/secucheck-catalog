@@ -1,10 +1,10 @@
 package secucheck.catalogSpecifications.FuentTQLRepositories.Sources;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSet;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.dsl.MethodSelector;
+import secucheck.InternalFluentTQL.dsl.MethodSet;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
+import secucheck.InternalFluentTQL.dsl.annotations.OutFlowReturnValue;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
 
 /**
  * Multiple Source definition for Webgoat

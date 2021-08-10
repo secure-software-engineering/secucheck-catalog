@@ -32,7 +32,7 @@ import secucheck.todolist.model.User;
 import secucheck.todolist.repository.TaskRepository;
 import secucheck.todolist.service.DirectoryStorageService;
 import secucheck.todolist.service.UserService;
-import de.fraunhofer.iem.secucheck.todolist.utils.*;
+import secucheck.todolist.utils.*;
 import secucheck.todolist.utils.SecurityUtils;
 
 /*

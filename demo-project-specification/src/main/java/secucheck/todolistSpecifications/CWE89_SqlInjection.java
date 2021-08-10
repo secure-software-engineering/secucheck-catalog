@@ -1,13 +1,13 @@
 package secucheck.todolistSpecifications;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.DatabaseController: " +
+            "secucheck.todolist.controllers.DatabaseController: " +
                     "java.lang.String showTasks(" +
                     "org.springframework.ui.Model," +
                     "java.lang.String)")
@@ -37,7 +37,7 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod2 = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.DatabaseController: " +
+            "secucheck.todolist.controllers.DatabaseController: " +
                     "java.lang.String showUrgentTasks(" +
                     "org.springframework.ui.Model," +
                     "java.lang.String)")
@@ -48,7 +48,7 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
      * Sink
      */
     public Method sinkMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.DatabaseController: " +
+            "secucheck.todolist.controllers.DatabaseController: " +
                     "java.lang.String getSearchQuery(" +
                     "java.lang.String," +
                     "java.lang.String)")

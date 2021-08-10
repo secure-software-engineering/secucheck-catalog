@@ -1,13 +1,13 @@
 package secucheck.todolistSpecifications;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
+import secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import secucheck.InternalFluentTQL.dsl.MethodConfigurator;
+import secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
+import secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
+import secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
+import secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
+import secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.TaskController: " +
+            "secucheck.todolist.controllers.TaskController: " +
                     "void redirectToExternalUrl(" +
                     "javax.servlet.http.HttpServletResponse," +
                     "java.lang.String)")
@@ -36,8 +36,8 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
      * Source
      */
     public Method sourceMethod2 = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.controllers.TaskController: " +
-                    "java.lang.String markDoneTask(de.fraunhofer.iem.secucheck.todolist.model.TaskList," +
+            "secucheck.todolist.controllers.TaskController: " +
+                    "java.lang.String markDoneTask(secucheck.todolist.model.TaskList," +
                     "javax.servlet.http.HttpServletResponse)")
             .out().param(0)
             .configure();
@@ -62,7 +62,7 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
             .configure();
 
     public Method rp1 = new MethodConfigurator(
-            "de.fraunhofer.iem.secucheck.todolist.model.TaskList: java.util.ArrayList getTaskList()")
+            "secucheck.todolist.model.TaskList: java.util.ArrayList getTaskList()")
             .in().thisObject()
             .out().returnValue()
             .configure();

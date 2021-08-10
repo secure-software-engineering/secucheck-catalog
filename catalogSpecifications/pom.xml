@@ -4,25 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>secucheck-catalog</artifactId>
-        <groupId>de.fraunhofer.iem.secucheck</groupId>
-        <version>v1.1.0</version>
+        <groupId>secucheck</groupId>
+        <version>vAnonymous</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications</artifactId>
+    <artifactId>secucheck.InternalFluentTQL.catalogSpecifications</artifactId>
     <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <secucheck.version>SC-1.1.0</secucheck.version>
+        <secucheck.version>SC-Anonymous</secucheck.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>de.fraunhofer.iem.secucheck</groupId>
-            <artifactId>de.fraunhofer.iem.secucheck.InternalFluentTQL</artifactId>
+            <groupId>secucheck</groupId>
+            <artifactId>secucheck.InternalFluentTQL</artifactId>
             <version>${secucheck.version}</version>
         </dependency>
 
@@ -36,9 +36,9 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>de.fraunhofer.iem.secucheck</groupId>
+                <groupId>secucheck</groupId>
                 <artifactId>fluenttql-maven-plugin</artifactId>
-                <version>SC-1.1.0</version>
+                <version>SC-Anonymous</version>
                 <executions>
                     <execution>
                         <goals>
