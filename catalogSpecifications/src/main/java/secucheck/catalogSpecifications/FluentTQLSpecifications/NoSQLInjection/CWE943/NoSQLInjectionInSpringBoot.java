@@ -23,13 +23,13 @@ public class NoSQLInjectionInSpringBoot implements FluentTQLUserInterface {
      * Source 1
      */
     @OutFlowParam(parameterID = {0})
-    public Method source1 = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformation(java.lang.String)");
+    public Method source1 = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformation(java.lang.String)");
 
     /**
      * Source 2
      */
     @OutFlowParam(parameterID = {0})
-    public Method source2 = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformationSafely(java.lang.String)");
+    public Method source2 = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformationSafely(java.lang.String)");
 
     /**
      * getMyInformation and getMyInformationSafely are source, since both take input from user.
@@ -43,7 +43,7 @@ public class NoSQLInjectionInSpringBoot implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: java.lang.String sanitizeForMongoDB(java.lang.String)");
+    public Method sanitizer = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: java.lang.String sanitizeForMongoDB(java.lang.String)");
 
     /**
      * put is a method that the data flow has to go through after sanitizer. If the data flow goes through this method before sanitizer then there will be a security vulnerability.

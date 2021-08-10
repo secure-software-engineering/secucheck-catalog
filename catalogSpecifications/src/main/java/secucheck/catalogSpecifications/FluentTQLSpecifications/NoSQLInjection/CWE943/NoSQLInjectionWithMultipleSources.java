@@ -25,26 +25,26 @@ public class NoSQLInjectionWithMultipleSources implements FluentTQLUserInterface
      * First source that takes userName from the user.
      */
     @OutFlowReturnValue
-    public Method source1 = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getUserName()");
+    public Method source1 = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getUserName()");
 
     /**
      * Second source that takes old password from the user.
      */
     @OutFlowReturnValue
-    public Method source2 = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getOldPassword()");
+    public Method source2 = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getOldPassword()");
 
     /**
      * Third souce that takes new password from the user.
      */
     @OutFlowReturnValue
-    public Method source3 = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getNewPassword()");
+    public Method source3 = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getNewPassword()");
 
     /**
      * sanitizeForMongoDB is user defined simple sanitizer for mongodb.
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String sanitizeForMongoDB(java.lang.String)");
+    public Method sanitizer = new MethodSelector("secucheck.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String sanitizeForMongoDB(java.lang.String)");
 
     /**
      * put is a method that the data flow has to go through after sanitizer to form a filer to update the password.
