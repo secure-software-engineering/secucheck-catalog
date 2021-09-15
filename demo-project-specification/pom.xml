@@ -6,7 +6,7 @@
     <parent>
         <groupId>de.fraunhofer.iem.secucheck</groupId>
         <artifactId>secucheck-catalog</artifactId>
-        <version>v1.1.0</version>
+        <version>v1.2.0</version>
     </parent>
 
     <artifactId>demo-project-specification</artifactId>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>de.fraunhofer.iem.secucheck</groupId>
             <artifactId>de.fraunhofer.iem.secucheck.InternalFluentTQL</artifactId>
-            <version>SC-1.1.0</version>
+            <version>SC-1.2.0</version>
         </dependency>
     </dependencies>
 
@@ -43,7 +43,7 @@
             <plugin>
                 <groupId>de.fraunhofer.iem.secucheck</groupId>
                 <artifactId>fluenttql-maven-plugin</artifactId>
-                <version>SC-1.1.0</version>
+                <version>SC-1.2.0</version>
                 <executions>
                     <execution>
                         <goals>

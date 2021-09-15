@@ -10,7 +10,7 @@
     </parent>
     <groupId>de.fraunhofer.iem.secucheck</groupId>
     <artifactId>demo-project</artifactId>
-    <version>v1.1.0</version>
+    <version>v1.2.0</version>
     <name>demo-project</name>
     <description>Demo project for Spring Boot</description>
 
