@@ -1,0 +1,92 @@
+public final class de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt extends java.lang.Object
+{
+
+    public static final void revealSecret(java.lang.String, boolean)
+    {
+        java.io.PrintStream $stack5, $stack7;
+        java.lang.String secret, $stack4, $stack6, varReplacer12, varReplacer13;
+        boolean flag;
+
+        nop;
+
+        secret := @parameter0: java.lang.String;
+
+        flag := @parameter1: boolean;
+
+        if flag == 0 goto label1;
+
+        nop;
+
+        varReplacer12 = "Flag is ON = ";
+
+        $stack6 = staticinvoke <kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>(varReplacer12, secret);
+
+        $stack7 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $stack7.<java.io.PrintStream: void println(java.lang.Object)>($stack6);
+
+        goto label2;
+
+     label1:
+        nop;
+
+        varReplacer13 = "Flag is OFF = ";
+
+        $stack4 = staticinvoke <kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>(varReplacer13, secret);
+
+        $stack5 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $stack5.<java.io.PrintStream: void println(java.lang.Object)>($stack4);
+
+     label2:
+        return;
+    }
+
+    public static final java.lang.String sanitizeSecret(java.lang.String)
+    {
+        char $stack7, $stack9;
+        java.lang.Character $stack10;
+        int $stack6, $stack8, l3, $i0;
+        java.lang.String secret, encryptedString, varReplacer14;
+
+        nop;
+
+        secret := @parameter0: java.lang.String;
+
+        varReplacer14 = "secret";
+
+        staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>(secret, varReplacer14);
+
+        encryptedString = "";
+
+        l3 = 0;
+
+        $stack6 = virtualinvoke secret.<java.lang.String: int length()>();
+
+     label1:
+        if l3 >= $stack6 goto label2;
+
+        nop;
+
+        $stack7 = virtualinvoke secret.<java.lang.String: char charAt(int)>(l3);
+
+        l3 = l3 + 1;
+
+        $i0 = (int) $stack7;
+
+        $stack8 = $i0 + 10;
+
+        $stack9 = (char) $stack8;
+
+        $stack10 = staticinvoke <java.lang.Character: java.lang.Character valueOf(char)>($stack9);
+
+        encryptedString = staticinvoke <kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>(encryptedString, $stack10);
+
+        goto label1;
+
+     label2:
+        nop;
+
+        return encryptedString;
+    }
+}

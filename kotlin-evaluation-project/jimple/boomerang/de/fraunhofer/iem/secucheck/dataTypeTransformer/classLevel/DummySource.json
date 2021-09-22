@@ -1,0 +1,65 @@
+{
+    "className": "de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource",
+    "superClass": "java.lang.Object",
+    "implementedInterface": [],
+    "methodCount": 3,
+    "methodsSignature": [
+        "<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: void <init>()>",
+        "<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: java.lang.String generateSecret(int,java.lang.String,java.util.List)>",
+        "<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: java.lang.String propagateEverything(java.lang.String)>"
+    ],
+    "methodsInformation": {
+        "void <init>()": {
+            "localVariables": {"this": "de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource"},
+            "stackVariables": {},
+            "invokeExpressions": ["<java.lang.Object: void <init>()>"]
+        },
+        "java.lang.String generateSecret(int,java.lang.String,java.util.List)": {
+            "localVariables": {
+                "name": "java.lang.String",
+                "lst": "java.util.List",
+                "age": "int",
+                "this": "de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource",
+                "varReplacer0": "java.lang.String",
+                "varReplacer1": "java.lang.String",
+                "varReplacer2": "int",
+                "varReplacer3": "int"
+            },
+            "stackVariables": {
+                "$stack4": "java.lang.StringBuilder",
+                "$stack5": "java.lang.StringBuilder",
+                "$stack6": "java.lang.StringBuilder",
+                "$stack7": "java.lang.StringBuilder",
+                "$stack8": "java.lang.StringBuilder",
+                "$stack9": "int",
+                "$stack10": "java.lang.StringBuilder",
+                "$stack11": "java.lang.String"
+            },
+            "invokeExpressions": [
+                "<kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>",
+                "<kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>",
+                "<java.lang.StringBuilder: void <init>()>",
+                "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+                "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+                "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+                "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>",
+                "<java.util.List: int size()>",
+                "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+                "<java.lang.StringBuilder: java.lang.String toString()>"
+            ]
+        },
+        "java.lang.String propagateEverything(java.lang.String)": {
+            "localVariables": {
+                "incoming": "java.lang.String",
+                "this": "de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource",
+                "varReplacer4": "java.lang.String",
+                "varReplacer5": "java.lang.String"
+            },
+            "stackVariables": {"$stack2": "java.lang.String"},
+            "invokeExpressions": [
+                "<kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>",
+                "<kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>"
+            ]
+        }
+    }
+}

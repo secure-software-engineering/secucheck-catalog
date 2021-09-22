@@ -1,0 +1,51 @@
+{
+    "className": "de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt",
+    "superClass": "java.lang.Object",
+    "implementedInterface": [],
+    "methodCount": 3,
+    "methodsSignature": [
+        "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: java.lang.String getPersonAddress()>",
+        "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: void readAndStoreDataWithTaintFlow()>",
+        "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: void readAndStoreDataWithOutTaintFlow()>"
+    ],
+    "methodsInformation": {
+        "java.lang.String getPersonAddress()": {
+            "localVariables": {"varReplacer25": "java.lang.String"},
+            "stackVariables": {},
+            "invokeExpressions": []
+        },
+        "void readAndStoreDataWithTaintFlow()": {
+            "localVariables": {
+                "varReplacer26": "null_type",
+                "varReplacer27": "null_type",
+                "varReplacer28": "null_type",
+                "varReplacer29": "int",
+                "varReplacer30": "null_type"
+            },
+            "stackVariables": {
+                "$stack1": "de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass",
+                "$stack3": "java.lang.String"
+            },
+            "invokeExpressions": [
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: java.lang.String getPersonAddress()>",
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker)>",
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void printData()>"
+            ]
+        },
+        "void readAndStoreDataWithOutTaintFlow()": {
+            "localVariables": {
+                "varReplacer31": "null_type",
+                "varReplacer32": "java.lang.String",
+                "varReplacer33": "null_type",
+                "varReplacer34": "null_type",
+                "varReplacer35": "int",
+                "varReplacer36": "null_type"
+            },
+            "stackVariables": {"$stack1": "de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass"},
+            "invokeExpressions": [
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker)>",
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void printData()>"
+            ]
+        }
+    }
+}

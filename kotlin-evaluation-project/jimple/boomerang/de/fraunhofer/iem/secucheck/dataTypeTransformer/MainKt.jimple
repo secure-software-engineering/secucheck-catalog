@@ -1,0 +1,65 @@
+public final class de.fraunhofer.iem.secucheck.dataTypeTransformer.MainKt extends java.lang.Object
+{
+
+    public static final void entryPointWithTaintFlow()
+    {
+        java.util.List $stack6;
+        de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource $stack3;
+        int varReplacer6, varReplacer7;
+        java.lang.String $stack7, $stack8, varReplacer8;
+
+        nop;
+
+        $stack3 = new de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource;
+
+        specialinvoke $stack3.<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: void <init>()>();
+
+        $stack6 = staticinvoke <kotlin.collections.CollectionsKt: java.util.List emptyList()>();
+
+        varReplacer7 = 100;
+
+        varReplacer8 = "Ranjith";
+
+        $stack7 = virtualinvoke $stack3.<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: java.lang.String generateSecret(int,java.lang.String,java.util.List)>(varReplacer7, varReplacer8, $stack6);
+
+        $stack8 = virtualinvoke $stack3.<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: java.lang.String propagateEverything(java.lang.String)>($stack7);
+
+        varReplacer6 = 1;
+
+        staticinvoke <de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt: void revealSecret(java.lang.String,boolean)>($stack8, varReplacer6);
+
+        return;
+    }
+
+    public static final void entryPointWithOutTaintFlow()
+    {
+        de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource $stack3;
+        java.util.List $stack6;
+        int varReplacer9, varReplacer10;
+        java.lang.String $stack7, $stack8, $stack9, varReplacer11;
+
+        nop;
+
+        $stack3 = new de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource;
+
+        specialinvoke $stack3.<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: void <init>()>();
+
+        $stack6 = staticinvoke <kotlin.collections.CollectionsKt: java.util.List emptyList()>();
+
+        varReplacer10 = 100;
+
+        varReplacer11 = "Ranjith";
+
+        $stack7 = virtualinvoke $stack3.<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: java.lang.String generateSecret(int,java.lang.String,java.util.List)>(varReplacer10, varReplacer11, $stack6);
+
+        $stack8 = virtualinvoke $stack3.<de.fraunhofer.iem.secucheck.dataTypeTransformer.classLevel.DummySource: java.lang.String propagateEverything(java.lang.String)>($stack7);
+
+        $stack9 = staticinvoke <de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt: java.lang.String sanitizeSecret(java.lang.String)>($stack8);
+
+        varReplacer9 = 1;
+
+        staticinvoke <de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt: void revealSecret(java.lang.String,boolean)>($stack9, varReplacer9);
+
+        return;
+    }
+}

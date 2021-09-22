@@ -1,0 +1,38 @@
+{
+    "className": "de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt",
+    "superClass": "java.lang.Object",
+    "implementedInterface": [],
+    "methodCount": 3,
+    "methodsSignature": [
+        "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: java.lang.String getPersonAddress()>",
+        "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: void readAndStoreDataWithTaintFlow()>",
+        "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: void readAndStoreDataWithOutTaintFlow()>"
+    ],
+    "methodsInformation": {
+        "java.lang.String getPersonAddress()": {
+            "localVariables": {},
+            "stackVariables": {},
+            "invokeExpressions": []
+        },
+        "void readAndStoreDataWithTaintFlow()": {
+            "localVariables": {},
+            "stackVariables": {
+                "$stack1": "de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass",
+                "$stack3": "java.lang.String"
+            },
+            "invokeExpressions": [
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.MainKt: java.lang.String getPersonAddress()>",
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker)>",
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void printData()>"
+            ]
+        },
+        "void readAndStoreDataWithOutTaintFlow()": {
+            "localVariables": {},
+            "stackVariables": {"$stack1": "de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass"},
+            "invokeExpressions": [
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker)>",
+                "<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void printData()>"
+            ]
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "className": "de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt",
+    "superClass": "java.lang.Object",
+    "implementedInterface": [],
+    "methodCount": 2,
+    "methodsSignature": [
+        "<de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt: void revealSecret(java.lang.String,boolean)>",
+        "<de.fraunhofer.iem.secucheck.dataTypeTransformer.topLevel.DummySinkKt: java.lang.String sanitizeSecret(java.lang.String)>"
+    ],
+    "methodsInformation": {
+        "void revealSecret(java.lang.String,boolean)": {
+            "localVariables": {
+                "flag": "boolean",
+                "secret": "java.lang.String"
+            },
+            "stackVariables": {
+                "$stack4": "java.lang.String",
+                "$stack5": "java.io.PrintStream",
+                "$stack6": "java.lang.String",
+                "$stack7": "java.io.PrintStream"
+            },
+            "invokeExpressions": [
+                "<kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>",
+                "<java.io.PrintStream: void println(java.lang.Object)>",
+                "<kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>",
+                "<java.io.PrintStream: void println(java.lang.Object)>"
+            ]
+        },
+        "java.lang.String sanitizeSecret(java.lang.String)": {
+            "localVariables": {
+                "secret": "java.lang.String",
+                "encryptedString": "java.lang.String"
+            },
+            "stackVariables": {
+                "$stack6": "int",
+                "$stack7": "char",
+                "$stack8": "int",
+                "$stack9": "char",
+                "$stack10": "java.lang.Character",
+                "l3": "int",
+                "$i0": "int"
+            },
+            "invokeExpressions": [
+                "<kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>",
+                "<java.lang.String: int length()>",
+                "<java.lang.String: char charAt(int)>",
+                "<java.lang.Character: java.lang.Character valueOf(char)>",
+                "<kotlin.jvm.internal.Intrinsics: java.lang.String stringPlus(java.lang.String,java.lang.Object)>"
+            ]
+        }
+    }
+}

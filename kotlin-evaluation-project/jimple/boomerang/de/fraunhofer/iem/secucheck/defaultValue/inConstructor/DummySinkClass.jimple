@@ -1,0 +1,189 @@
+public final class de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass extends java.lang.Object
+{
+    private final java.lang.String data1;
+    private final java.lang.String data2;
+    private final java.lang.String data3;
+    private final java.lang.String data4;
+
+    public void <init>(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+    {
+        de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass this;
+        java.lang.String data1, data2, data3, data4, varReplacer15, varReplacer16, varReplacer17, varReplacer18;
+
+        nop;
+
+        this := @this: de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass;
+
+        data1 := @parameter0: java.lang.String;
+
+        data2 := @parameter1: java.lang.String;
+
+        data3 := @parameter2: java.lang.String;
+
+        data4 := @parameter3: java.lang.String;
+
+        varReplacer15 = "data1";
+
+        staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>(data1, varReplacer15);
+
+        varReplacer17 = "data2";
+
+        staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>(data2, varReplacer17);
+
+        varReplacer18 = "data3";
+
+        staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>(data3, varReplacer18);
+
+        varReplacer16 = "data4";
+
+        staticinvoke <kotlin.jvm.internal.Intrinsics: void checkNotNullParameter(java.lang.Object,java.lang.String)>(data4, varReplacer16);
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data1> = data1;
+
+        this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data2> = data2;
+
+        this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data3> = data3;
+
+        this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data4> = data4;
+
+        return;
+    }
+
+    public void <init>(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, kotlin.jvm.internal.DefaultConstructorMarker)
+    {
+        kotlin.jvm.internal.DefaultConstructorMarker l6;
+        int l5, $stack7, $stack8, $stack9, $stack10;
+        de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass l0;
+        java.lang.String l1, l2, l3, l4;
+
+        nop;
+
+        l0 := @this: de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass;
+
+        l1 := @parameter0: java.lang.String;
+
+        l2 := @parameter1: java.lang.String;
+
+        l3 := @parameter2: java.lang.String;
+
+        l4 := @parameter3: java.lang.String;
+
+        l5 := @parameter4: int;
+
+        l6 := @parameter5: kotlin.jvm.internal.DefaultConstructorMarker;
+
+        $stack7 = l5 & 1;
+
+        if $stack7 == 0 goto label1;
+
+        nop;
+
+        l1 = "";
+
+     label1:
+        nop;
+
+        $stack8 = l5 & 2;
+
+        if $stack8 == 0 goto label2;
+
+        nop;
+
+        l2 = "";
+
+     label2:
+        nop;
+
+        $stack9 = l5 & 4;
+
+        if $stack9 == 0 goto label3;
+
+        nop;
+
+        l3 = "";
+
+     label3:
+        nop;
+
+        $stack10 = l5 & 8;
+
+        if $stack10 == 0 goto label4;
+
+        nop;
+
+        l4 = "";
+
+     label4:
+        nop;
+
+        specialinvoke l0.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>(l1, l2, l3, l4);
+
+        return;
+    }
+
+    public final void printData()
+    {
+        java.io.PrintStream $stack3, $stack4, $stack5, $stack6;
+        de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass this;
+        java.lang.String l1;
+
+        nop;
+
+        this := @this: de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass;
+
+        l1 = this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data1>;
+
+        $stack3 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $stack3.<java.io.PrintStream: void println(java.lang.Object)>(l1);
+
+        l1 = this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data2>;
+
+        $stack4 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $stack4.<java.io.PrintStream: void println(java.lang.Object)>(l1);
+
+        l1 = this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data3>;
+
+        $stack5 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $stack5.<java.io.PrintStream: void println(java.lang.Object)>(l1);
+
+        l1 = this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: java.lang.String data4>;
+
+        $stack6 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $stack6.<java.io.PrintStream: void println(java.lang.Object)>(l1);
+
+        return;
+    }
+
+    public void <init>()
+    {
+        null_type varReplacer19, varReplacer20, varReplacer21, varReplacer22, varReplacer24;
+        int varReplacer23;
+        de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass this;
+
+        nop;
+
+        this := @this: de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass;
+
+        varReplacer19 = null;
+
+        varReplacer20 = null;
+
+        varReplacer21 = null;
+
+        varReplacer22 = null;
+
+        varReplacer23 = 15;
+
+        varReplacer24 = null;
+
+        specialinvoke this.<de.fraunhofer.iem.secucheck.defaultValue.inConstructor.DummySinkClass: void <init>(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,kotlin.jvm.internal.DefaultConstructorMarker)>(varReplacer19, varReplacer19, varReplacer19, varReplacer19, varReplacer23, varReplacer19);
+
+        return;
+    }
+}

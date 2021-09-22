@@ -22,6 +22,8 @@
         <module>demo-project-specification</module>
         <module>WebGoatSpecifications</module>
         <module>PetClinicSpecifications</module>
+        <module>kotlin-evaluation-project</module>
+        <module>kotlin-evaluation-project-specifications</module>
     </modules>
 
 
