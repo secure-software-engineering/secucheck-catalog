@@ -16,24 +16,26 @@ import java.util.List;
 public class Spec3 implements FluentTQLUserInterface {
     @OutFlowParam(parameterID = {0})
     public Method source = new MethodSelector("org.springframework.samples.petclinic.owner.OwnerController: " +
-            "java.lang.String processFindForm(" +
+            "String processFindForm(" +
             "org.springframework.samples.petclinic.owner.Owner," +
             "org.springframework.validation.BindingResult," +
-            "java.util.Map)");
+            "MutableMap)");
 
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
     public Method requiredProp = new MethodSelector("javax.persistence.EntityManager: " +
-            "javax.persistence.TypedQuery createQuery(java.lang.String,java.lang.Class)");
+            "javax.persistence.TypedQuery createQuery(String,java.lang.Class)");
 
+    //TODO: This has to be handled by the Property feature in Kotlin
     @InFlowThisObject
     @OutFlowReturnValue
     public Method requiredProp1 = new MethodSelector("org.springframework.samples.petclinic.model.Person: " +
-            "java.lang.String getLastName()");
+            "String getLastName()");
 
+    //TODO: This has to be handled by the Property feature in Kotlin
     @InFlowThisObject
-    public Method sink = new MethodSelector("javax.persistence.TypedQuery: java.util.List getResultList()");
-
+    public Method sink = new MethodSelector("javax.persistence.TypedQuery: " +
+            "List getResultList()");
     @Override
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
         TaintFlowQuery taintFlow = new TaintFlowQueryBuilder("h3")

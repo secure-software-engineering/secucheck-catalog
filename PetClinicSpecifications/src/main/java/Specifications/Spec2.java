@@ -16,16 +16,17 @@ import java.util.List;
 public class Spec2 implements FluentTQLUserInterface {
     @OutFlowParam(parameterID = {0})
     public Method source = new MethodSelector("org.springframework.samples.petclinic.owner.OwnerController: " +
-            "java.lang.String initUpdateOwnerForm(int,org.springframework.ui.Model)");
+            "String initUpdateOwnerForm(Int,org.springframework.ui.Model)");
 
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
     public Method requiredProp = new MethodSelector("javax.persistence.EntityManager: " +
-            "javax.persistence.TypedQuery createQuery(java.lang.String,java.lang.Class)");
+            "javax.persistence.TypedQuery createQuery(String,java.lang.Class)");
 
+    //TODO: This has to be handled by the Property feature in Kotlin
     @InFlowThisObject
     public Method sink = new MethodSelector("javax.persistence.TypedQuery: " +
-            "java.lang.Object getSingleResult()");
+            "Any getSingleResult()");
 
     @Override
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
