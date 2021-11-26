@@ -4,8 +4,10 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.*;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.methodSignature.MethodSignatureBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.FluentTQLSpecification;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.MethodSignature;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.Query.TaintFlowQuery;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.SpecificationInterface.FluentTQLUserInterface;
 
@@ -26,16 +28,23 @@ public class Spec3 implements FluentTQLUserInterface {
     public Method requiredProp = new MethodSelector("javax.persistence.EntityManager: " +
             "javax.persistence.TypedQuery createQuery(String,java.lang.Class)");
 
-    //TODO: This has to be handled by the Property feature in Kotlin
+    public MethodSignature requiredProp1Sig = new MethodSignatureBuilder()
+            .atClass("org.springframework.samples.petclinic.model.Person")
+            .property("lastName", "String")
+            .getter();
+
     @InFlowThisObject
     @OutFlowReturnValue
-    public Method requiredProp1 = new MethodSelector("org.springframework.samples.petclinic.model.Person: " +
-            "String getLastName()");
+    public Method requiredProp1 = new MethodSelector(requiredProp1Sig);
 
-    //TODO: This has to be handled by the Property feature in Kotlin
+    public MethodSignature sinkSig = new MethodSignatureBuilder()
+            .atClass("javax.persistence.TypedQuery")
+            .property("resultList", "List")
+            .getter();
+
     @InFlowThisObject
-    public Method sink = new MethodSelector("javax.persistence.TypedQuery: " +
-            "List getResultList()");
+    public Method sink = new MethodSelector(sinkSig);
+
     @Override
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
         TaintFlowQuery taintFlow = new TaintFlowQueryBuilder("h3")
