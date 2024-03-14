@@ -1,9 +1,9 @@
 package Specifications.FuentTQLRepositories.GeneralPropagators;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.GeneralPropagator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.annotations.FluentTQLRepositoryClass;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.annotations.GeneralPropagator;
+import de.fraunhofer.iem.secucheck.fluenttql.interfaces.MethodPackage.Method;
 
 @FluentTQLRepositoryClass
 public class Java11ConcatGeneralPropagators {
@@ -34,6 +34,36 @@ public class Java11ConcatGeneralPropagators {
 
     @GeneralPropagator
     public static Method JAVA_11_STR_CONCAT5 = new MethodConfigurator("java.lang.invoke.StringConcatFactory: java.lang.String makeConcatWithConstants(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)")
+            .in().param(0).param(1).param(2).param(3).param(4)
+            .out().returnValue()
+            .configure();
+
+    @GeneralPropagator
+    public static Method JAVA_11_STR_CONCAT11 = new MethodConfigurator("soot.dummy.InvokeDynamic: java.lang.String makeConcatWithConstants(java.lang.String)")
+            .in().param(0)
+            .out().returnValue()
+            .configure();
+
+    @GeneralPropagator
+    public static Method JAVA_11_STR_CONCAT21 = new MethodConfigurator("soot.dummy.InvokeDynamic: java.lang.String makeConcatWithConstants(java.lang.String,java.lang.String)")
+            .in().param(0).param(1)
+            .out().returnValue()
+            .configure();
+
+    @GeneralPropagator
+    public static Method JAVA_11_STR_CONCAT31 = new MethodConfigurator("soot.dummy.InvokeDynamic: java.lang.String makeConcatWithConstants(java.lang.String,java.lang.String,java.lang.String)")
+            .in().param(0).param(1).param(2)
+            .out().returnValue()
+            .configure();
+
+    @GeneralPropagator
+    public static Method JAVA_11_STR_CONCAT41 = new MethodConfigurator("soot.dummy.InvokeDynamic: java.lang.String makeConcatWithConstants(java.lang.String,java.lang.String,java.lang.String,java.lang.String)")
+            .in().param(0).param(1).param(2).param(3)
+            .out().returnValue()
+            .configure();
+
+    @GeneralPropagator
+    public static Method JAVA_11_STR_CONCAT51 = new MethodConfigurator("soot.dummy.InvokeDynamic: java.lang.String makeConcatWithConstants(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)")
             .in().param(0).param(1).param(2).param(3).param(4)
             .out().returnValue()
             .configure();

@@ -1,9 +1,10 @@
 package Specifications.FuentTQLRepositories.GeneralPropagators;
 
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLRepositoryClass;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.GeneralPropagator;
-import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPackage.Method;
+
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.annotations.FluentTQLRepositoryClass;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.annotations.GeneralPropagator;
+import de.fraunhofer.iem.secucheck.fluenttql.interfaces.MethodPackage.Method;
 
 @FluentTQLRepositoryClass
 public class AdditionalGP {
