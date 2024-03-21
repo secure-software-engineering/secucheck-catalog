@@ -27,7 +27,7 @@ public class Sources {
             .out().returnValue()
             .configure();
 
-    public static Method source_32_33 = new MethodConfigurator(
+    public static Method source_32_33_34 = new MethodConfigurator(
             "javax.servlet.http.HttpServletRequest: " +
                     "java.util.Map " +
                     "getParameterMap()")

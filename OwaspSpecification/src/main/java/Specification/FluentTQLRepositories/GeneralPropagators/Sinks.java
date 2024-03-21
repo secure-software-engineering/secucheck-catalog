@@ -47,4 +47,10 @@ public class Sinks {
                     "void execute(java.lang.String)")
             .in().param(0)
             .configure();
+
+    public static Method sink_34 = new MethodConfigurator(
+            "java.sql.Statement: " +
+                    "boolean execute(java.lang.String,int)")
+            .in().param(0)
+            .configure();
 }

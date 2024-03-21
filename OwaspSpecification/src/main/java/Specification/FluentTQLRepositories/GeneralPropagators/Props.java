@@ -34,7 +34,7 @@ public class Props {
             .out().returnValue()
             .configure();
 
-    public static Method prop_32A_33A = new MethodConfigurator("java.util.Map: " +
+    public static Method prop_32A_33A_34A = new MethodConfigurator("java.util.Map: " +
             "java.lang.Object " +
             "get(java.lang.Object)")
             .in().thisObject()
