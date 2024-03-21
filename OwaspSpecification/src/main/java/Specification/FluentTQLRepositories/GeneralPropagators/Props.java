@@ -54,4 +54,11 @@ public class Props {
             .in().param(0)
             .out().returnValue()
             .configure();
+
+    public static Method prop1_00032 = new MethodConfigurator("java.util.Map: " +
+            "java.lang.Object " +
+            "get(java.lang.Object)")
+            .in().thisObject()
+            .out().returnValue()
+            .configure();
 }

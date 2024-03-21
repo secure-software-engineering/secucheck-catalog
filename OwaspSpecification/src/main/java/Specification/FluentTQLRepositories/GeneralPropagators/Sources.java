@@ -54,4 +54,11 @@ public class Sources {
                     "getHeaders(java.lang.String)")
             .out().returnValue()
             .configure();
+
+    public static Method source_00032 = new MethodConfigurator(
+            "javax.servlet.http.HttpServletRequest: " +
+                    "java.util.Map " +
+                    "getParameterMap()")
+            .out().returnValue()
+            .configure();
 }

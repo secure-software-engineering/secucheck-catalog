@@ -47,4 +47,10 @@ public class Sinks {
                     "int[] batchUpdate(java.lang.String[])")
             .in().param(0)
             .configure();
+
+    public static Method sink_00032 = new MethodConfigurator(
+            "org.springframework.jdbc.core.JdbcTemplate: " +
+                    "void execute(java.lang.String)")
+            .in().param(0)
+            .configure();
 }
