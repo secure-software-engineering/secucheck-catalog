@@ -6,56 +6,35 @@ import de.fraunhofer.iem.secucheck.fluenttql.interfaces.MethodPackage.Method;
 
 @FluentTQLRepositoryClass
 public class Props {
-    public static Method prop1_00008 = new MethodConfigurator("java.net.URLDecoder: " +
+    public static Method prop_8A_18A_341A = new MethodConfigurator("java.net.URLDecoder: " +
             "java.lang.String " +
             "decode(java.lang.String,java.lang.String)")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public static Method prop2_00008 = new MethodConfigurator("java.sql.Connection: " +
+    public static Method prop_8B = new MethodConfigurator("java.sql.Connection: " +
             "java.sql.CallableStatement " +
             "prepareCall(java.lang.String)")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public static Method prop1_00018 = new MethodConfigurator("java.util.Enumeration: " +
+    public static Method prop_18B_341B = new MethodConfigurator("java.util.Enumeration: " +
             "java.lang.Object " +
             "nextElement()")
             .in().thisObject()
             .out().returnValue()
             .configure();
 
-    public static Method prop2_00018 = new MethodConfigurator("java.net.URLDecoder: " +
-            "java.lang.String " +
-            "decode(java.lang.String,java.lang.String)")
-            .in().param(0)
-            .out().returnValue()
-            .configure();
-
-    public static Method prop1_00024 = new MethodConfigurator("java.sql.Connection: " +
+    public static Method prop_24A = new MethodConfigurator("java.sql.Connection: " +
             "java.sql.PreparedStatement " +
             "prepareStatement(java.lang.String,int,int,int)")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public static Method prop1_00341 = new MethodConfigurator("java.util.Enumeration: " +
-            "java.lang.Object " +
-            "nextElement()")
-            .in().thisObject()
-            .out().returnValue()
-            .configure();
-
-    public static Method prop2_00341 = new MethodConfigurator("java.net.URLDecoder: " +
-            "java.lang.String " +
-            "decode(java.lang.String,java.lang.String)")
-            .in().param(0)
-            .out().returnValue()
-            .configure();
-
-    public static Method prop1_00032 = new MethodConfigurator("java.util.Map: " +
+    public static Method prop_32A_33A = new MethodConfigurator("java.util.Map: " +
             "java.lang.Object " +
             "get(java.lang.Object)")
             .in().thisObject()

@@ -19,10 +19,10 @@ import java.util.List;
 public class Benchmark00018Spec implements FluentTQLUserInterface {
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00018")
-                .from(Sources.source_00018)
-                .through(Props.prop1_00018)
-                .through(Props.prop2_00018)
-                .to(Sinks.sink_00018)
+                .from(Sources.source_18_341)
+                .through(Props.prop_8A_18A_341A)
+                .through(Props.prop_18B_341B)
+                .to(Sinks.sink_18_27)
                 .report("Benchmark00018 SQLi")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
