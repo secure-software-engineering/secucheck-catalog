@@ -1,5 +1,8 @@
 package Specification;
 
+import Specification.FluentTQLRepositories.GeneralPropagators.Props;
+import Specification.FluentTQLRepositories.GeneralPropagators.Sinks;
+import Specification.FluentTQLRepositories.GeneralPropagators.Sources;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.TaintFlowQueryBuilder;
@@ -14,39 +17,12 @@ import java.util.List;
 
 @FluentTQLSpecificationClass
 public class Benchmark00341Spec implements FluentTQLUserInterface {
-    public Method source = new MethodConfigurator(
-            "javax.servlet.http.HttpServletRequest: " +
-                    "java.util.Enumeration " +
-                    "getHeaders(java.lang.String)")
-            .out().returnValue()
-            .configure();
-
-    public Method prop1 = new MethodConfigurator("java.util.Enumeration: " +
-            "java.lang.Object " +
-            "nextElement()")
-            .in().thisObject()
-            .out().returnValue()
-            .configure();
-
-    public Method prop2 = new MethodConfigurator("java.net.URLDecoder: " +
-            "java.lang.String " +
-            "decode(java.lang.String,java.lang.String)")
-            .in().param(0)
-            .out().returnValue()
-            .configure();
-
-    public Method sink = new MethodConfigurator(
-            "org.springframework.jdbc.core.JdbcTemplate: " +
-                    "int[] batchUpdate(java.lang.String[])")
-            .in().param(0)
-            .configure();
-
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00341")
-                .from(source)
-                .through(prop1)
-                .through(prop2)
-                .to(sink)
+                .from(Sources.source_00341)
+                .through(Props.prop1_00341)
+                .through(Props.prop2_00341)
+                .to(Sinks.sink_00341)
                 .report("Benchmark00341 SQLi")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();

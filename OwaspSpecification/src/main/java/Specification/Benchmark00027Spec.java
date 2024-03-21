@@ -1,5 +1,7 @@
 package Specification;
 
+import Specification.FluentTQLRepositories.GeneralPropagators.Sinks;
+import Specification.FluentTQLRepositories.GeneralPropagators.Sources;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.CONSTANTS.LOCATION;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.TaintFlowQueryBuilder;
@@ -14,23 +16,10 @@ import java.util.List;
 
 @FluentTQLSpecificationClass
 public class Benchmark00027Spec implements FluentTQLUserInterface {
-    public Method source = new MethodConfigurator(
-            "javax.servlet.http.HttpServletRequest: " +
-                    "java.lang.String " +
-                    "getParameter(java.lang.String)")
-            .out().returnValue()
-            .configure();
-
-    public Method sink = new MethodConfigurator(
-            "java.sql.Statement: " +
-                    "int executeUpdate(java.lang.String)")
-            .in().param(0)
-            .configure();
-
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00027")
-                .from(source)
-                .to(sink)
+                .from(Sources.source_00027)
+                .to(Sinks.sink_00027)
                 .report("Benchmark00027 SQLi")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
