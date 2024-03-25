@@ -1,6 +1,7 @@
 package Specification.FluentTQLRepositories.GeneralPropagators;
 
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodSet;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.annotations.FluentTQLRepositoryClass;
 import de.fraunhofer.iem.secucheck.fluenttql.interfaces.MethodPackage.Method;
 
@@ -41,17 +42,11 @@ public class Props {
             .out().returnValue()
             .configure();
 
-    public static Method prop_43A = new MethodConfigurator("org.owasp.benchmark.helpers.SeparateClassRequest: " +
-            "void " +
-            "<init>(javax.servlet.http.HttpServletRequest)")
-            .in().param(0)
-            .out().thisObject()
-            .configure();
-
-    public static Method prop_43B = new MethodConfigurator("org.owasp.benchmark.helpers.SeparateClassRequest: " +
-            "java.lang.String " +
-            "getTheParameter(java.lang.String)")
-            .in().thisObject()
-            .out().returnValue()
-            .configure();
+    public static MethodSet props = new MethodSet("Props") {{
+       addMethod(prop_8A_18A_341A);
+       addMethod(prop_8B);
+       addMethod(prop_18B_341B_37A_38_39);
+       addMethod(prop_24A_37B);
+       addMethod(prop_32A_33A_34A);
+    }};
 }

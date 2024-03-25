@@ -1,6 +1,7 @@
 package Specification.FluentTQLRepositories.GeneralPropagators;
 
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodConfigurator;
+import de.fraunhofer.iem.secucheck.fluenttql.dsl.MethodSet;
 import de.fraunhofer.iem.secucheck.fluenttql.dsl.annotations.FluentTQLRepositoryClass;
 import de.fraunhofer.iem.secucheck.fluenttql.interfaces.MethodPackage.Method;
 
@@ -20,7 +21,7 @@ public class Sources {
             .out().returnValue()
             .configure();
 
-    public static Method source_24_25_26_27 = new MethodConfigurator(
+    public static Method source_24_25_26_27_43 = new MethodConfigurator(
             "javax.servlet.http.HttpServletRequest: " +
                     "java.lang.String " +
                     "getParameter(java.lang.String)")
@@ -41,10 +42,11 @@ public class Sources {
             .out().returnValue()
             .configure();
 
-    public static Method source_43 = new MethodConfigurator(
-            "org.owasp.benchmark.testcode.BenchmarkTest00043: " +
-                    "void " +
-                    "doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)")
-            .out().param(0)
-            .configure();
+    public static MethodSet sources = new MethodSet("Sources") {{
+       addMethod(source_8);
+       addMethod(source_18_341);
+       addMethod(source_24_25_26_27_43);
+       addMethod(source_32_33_34);
+       addMethod(source_37_38_39);
+    }};
 }
