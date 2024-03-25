@@ -41,12 +41,4 @@ public class Sources {
                     "getParameterNames()")
             .out().returnValue()
             .configure();
-
-    public static MethodSet sources = new MethodSet("Sources") {{
-       addMethod(source_8);
-       addMethod(source_18_341);
-       addMethod(source_24_25_26_27_43);
-       addMethod(source_32_33_34);
-       addMethod(source_37_38_39);
-    }};
 }

@@ -41,12 +41,4 @@ public class Props {
             .in().thisObject()
             .out().returnValue()
             .configure();
-
-    public static MethodSet props = new MethodSet("Props") {{
-       addMethod(prop_8A_18A_341A);
-       addMethod(prop_8B);
-       addMethod(prop_18B_341B_37A_38_39);
-       addMethod(prop_24A_37B);
-       addMethod(prop_32A_33A_34A);
-    }};
 }

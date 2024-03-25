@@ -72,18 +72,4 @@ public class Sinks {
                     "int executeUpdate(java.lang.String,int[])")
             .in().param(0)
             .configure();
-
-    public static MethodSet sinks = new MethodSet("Sinks") {{
-       addMethod(sink_8);
-       addMethod(sink_18_27);
-       addMethod(sink_24_37);
-       addMethod(sink_25);
-       addMethod(sink_26);
-       addMethod(sink_341);
-       addMethod(sink_32_33);
-       addMethod(sink_34);
-       addMethod(sink_38);
-       addMethod(sink_39);
-       addMethod(sink_43);
-    }};
 }
