@@ -20,7 +20,7 @@ public class Props {
             .out().returnValue()
             .configure();
 
-    public static Method prop_18B_341B_37A_38 = new MethodConfigurator("java.util.Enumeration: " +
+    public static Method prop_18B_341B_37A_38_39 = new MethodConfigurator("java.util.Enumeration: " +
             "java.lang.Object " +
             "nextElement()")
             .in().thisObject()

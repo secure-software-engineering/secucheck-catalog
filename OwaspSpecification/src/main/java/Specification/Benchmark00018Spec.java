@@ -21,7 +21,7 @@ public class Benchmark00018Spec implements FluentTQLUserInterface {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00018")
                 .from(Sources.source_18_341)
                 .through(Props.prop_8A_18A_341A)
-                .through(Props.prop_18B_341B_37A_38)
+                .through(Props.prop_18B_341B_37A_38_39)
                 .to(Sinks.sink_18_27)
                 .report("Benchmark00018 SQLi")
                 .at(LOCATION.SOURCEANDSINK)

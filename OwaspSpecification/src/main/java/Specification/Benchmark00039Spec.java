@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @FluentTQLSpecificationClass
-public class Benchmark00038Spec implements FluentTQLUserInterface {
+public class Benchmark00039Spec implements FluentTQLUserInterface {
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
-        TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00038")
+        TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00039")
                 .from(Sources.source_37_38_39)
                 .through(Props.prop_18B_341B_37A_38_39)
-                .to(Sinks.sink_38)
-                .report("Benchmark00038 SQLi")
+                .to(Sinks.sink_39)
+                .report("Benchmark00039 SQLi")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

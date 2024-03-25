@@ -34,7 +34,7 @@ public class Sources {
             .out().returnValue()
             .configure();
 
-    public static Method source_37_38 = new MethodConfigurator(
+    public static Method source_37_38_39 = new MethodConfigurator(
             "javax.servlet.http.HttpServletRequest: " +
                     "java.util.Enumeration " +
                     "getParameterNames()")

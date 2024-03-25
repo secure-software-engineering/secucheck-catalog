@@ -59,4 +59,10 @@ public class Sinks {
                     "java.util.List query(java.lang.String,org.springframework.jdbc.core.RowMapper)")
             .in().param(0)
             .configure();
+
+    public static Method sink_39 = new MethodConfigurator(
+            "org.springframework.jdbc.core.JdbcTemplate: " +
+                    "java.util.Map queryForMap(java.lang.String)")
+            .in().param(0)
+            .configure();
 }
