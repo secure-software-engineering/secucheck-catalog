@@ -18,7 +18,7 @@ public class Sinks {
             .in().param(0)
             .configure();
 
-    public static Method sink_24 = new MethodConfigurator(
+    public static Method sink_24_37 = new MethodConfigurator(
             "java.sql.PreparedStatement: " +
                     "boolean execute()")
             .in().thisObject()

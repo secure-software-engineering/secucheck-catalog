@@ -20,14 +20,14 @@ public class Props {
             .out().returnValue()
             .configure();
 
-    public static Method prop_18B_341B = new MethodConfigurator("java.util.Enumeration: " +
+    public static Method prop_18B_341B_37A = new MethodConfigurator("java.util.Enumeration: " +
             "java.lang.Object " +
             "nextElement()")
             .in().thisObject()
             .out().returnValue()
             .configure();
 
-    public static Method prop_24A = new MethodConfigurator("java.sql.Connection: " +
+    public static Method prop_24A_37B = new MethodConfigurator("java.sql.Connection: " +
             "java.sql.PreparedStatement " +
             "prepareStatement(java.lang.String,int,int,int)")
             .in().param(0)

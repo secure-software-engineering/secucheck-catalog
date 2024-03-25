@@ -20,8 +20,8 @@ public class Benchmark00024Spec implements FluentTQLUserInterface {
     public List<FluentTQLSpecification> getFluentTQLSpecification() {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("Benchmark00024")
                 .from(Sources.source_24_25_26_27)
-                .through(Props.prop_24A)
-                .to(Sinks.sink_24)
+                .through(Props.prop_24A_37B)
+                .to(Sinks.sink_24_37)
                 .report("Benchmark00024 SQLi")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();

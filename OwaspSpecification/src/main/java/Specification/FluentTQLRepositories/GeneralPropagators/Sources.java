@@ -33,4 +33,11 @@ public class Sources {
                     "getParameterMap()")
             .out().returnValue()
             .configure();
+
+    public static Method source_37 = new MethodConfigurator(
+            "javax.servlet.http.HttpServletRequest: " +
+                    "java.util.Enumeration " +
+                    "getParameterNames()")
+            .out().returnValue()
+            .configure();
 }
