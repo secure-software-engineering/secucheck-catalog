@@ -53,4 +53,10 @@ public class Sinks {
                     "boolean execute(java.lang.String,int)")
             .in().param(0)
             .configure();
+
+    public static Method sink_38 = new MethodConfigurator(
+            "org.springframework.jdbc.core.JdbcTemplate: " +
+                    "java.util.List query(java.lang.String,org.springframework.jdbc.core.RowMapper)")
+            .in().param(0)
+            .configure();
 }
