@@ -65,4 +65,10 @@ public class Sinks {
                     "java.util.Map queryForMap(java.lang.String)")
             .in().param(0)
             .configure();
+
+    public static Method sink_43 = new MethodConfigurator(
+            "java.sql.Statement: " +
+                    "int executeUpdate(java.lang.String,int[])")
+            .in().param(0)
+            .configure();
 }

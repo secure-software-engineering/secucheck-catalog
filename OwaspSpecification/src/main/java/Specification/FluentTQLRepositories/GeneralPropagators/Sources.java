@@ -40,4 +40,11 @@ public class Sources {
                     "getParameterNames()")
             .out().returnValue()
             .configure();
+
+    public static Method source_43 = new MethodConfigurator(
+            "org.owasp.benchmark.testcode.BenchmarkTest00043: " +
+                    "void " +
+                    "doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)")
+            .out().param(0)
+            .configure();
 }

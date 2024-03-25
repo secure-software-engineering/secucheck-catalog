@@ -40,4 +40,18 @@ public class Props {
             .in().thisObject()
             .out().returnValue()
             .configure();
+
+    public static Method prop_43A = new MethodConfigurator("org.owasp.benchmark.helpers.SeparateClassRequest: " +
+            "void " +
+            "<init>(javax.servlet.http.HttpServletRequest)")
+            .in().param(0)
+            .out().thisObject()
+            .configure();
+
+    public static Method prop_43B = new MethodConfigurator("org.owasp.benchmark.helpers.SeparateClassRequest: " +
+            "java.lang.String " +
+            "getTheParameter(java.lang.String)")
+            .in().thisObject()
+            .out().returnValue()
+            .configure();
 }
