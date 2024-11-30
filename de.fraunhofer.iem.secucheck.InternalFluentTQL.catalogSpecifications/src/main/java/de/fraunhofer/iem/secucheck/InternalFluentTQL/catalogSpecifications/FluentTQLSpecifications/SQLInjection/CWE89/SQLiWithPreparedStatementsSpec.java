@@ -87,7 +87,7 @@ public class SQLiWithPreparedStatementsSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(requiredPropagator)
                 .to(PreparedStatementSinks.prepSinks)
-                .report("SQL-Injection, even though its prepared statement - CWE89!!!")
+                .report("SQL-Injection, even though its prepared statement:CWE89")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

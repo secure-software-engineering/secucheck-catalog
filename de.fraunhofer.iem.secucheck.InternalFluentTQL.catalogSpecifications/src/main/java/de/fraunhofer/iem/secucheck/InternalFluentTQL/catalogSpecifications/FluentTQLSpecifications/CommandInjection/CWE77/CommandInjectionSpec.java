@@ -55,7 +55,7 @@ public class CommandInjectionSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(requiredPropagator)
                 .to(sink)
-                .report("Command Injection - CWE77!")
+                .report("Command Injection:CWE77")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

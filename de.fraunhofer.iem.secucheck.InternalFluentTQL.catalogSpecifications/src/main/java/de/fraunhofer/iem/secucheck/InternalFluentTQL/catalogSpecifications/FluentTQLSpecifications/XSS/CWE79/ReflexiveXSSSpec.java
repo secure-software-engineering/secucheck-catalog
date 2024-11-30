@@ -51,7 +51,7 @@ public class ReflexiveXSSSpec implements FluentTQLUserInterface {
                 .through(deSanitizer)
                 .notThrough(sanitizer)
                 .to(ServletSinks.servletSinks)
-                .report("Reflexive XSS - CWE79 !")
+                .report("Reflexive XSS:CWE79")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

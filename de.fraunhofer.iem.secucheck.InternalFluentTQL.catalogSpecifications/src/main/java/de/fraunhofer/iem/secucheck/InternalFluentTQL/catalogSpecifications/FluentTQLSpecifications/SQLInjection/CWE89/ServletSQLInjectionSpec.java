@@ -42,7 +42,7 @@ public class ServletSQLInjectionSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(SQLSinks.sqlSinks)
-                .report("Servlet SQL-Injection - CWE89!!")
+                .report("Servlet SQL-Injection:CWE89")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

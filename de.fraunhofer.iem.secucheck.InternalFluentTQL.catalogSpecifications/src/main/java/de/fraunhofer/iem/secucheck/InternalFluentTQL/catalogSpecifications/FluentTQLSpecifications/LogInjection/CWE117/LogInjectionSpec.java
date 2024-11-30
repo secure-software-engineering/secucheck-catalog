@@ -52,7 +52,7 @@ public class LogInjectionSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(deSanitizer)
                 .to(LogInjectionSinks.logInjectionSinks)
-                .report("Log-Injection CWE-117!")
+                .report("Log-Injection:CWE117")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -60,7 +60,7 @@ public class LogInjectionSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(LogInjectionSinks.logInjectionSinks)
-                .report("Log-Injection CWE-117!")
+                .report("Log-Injection:CWE117")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

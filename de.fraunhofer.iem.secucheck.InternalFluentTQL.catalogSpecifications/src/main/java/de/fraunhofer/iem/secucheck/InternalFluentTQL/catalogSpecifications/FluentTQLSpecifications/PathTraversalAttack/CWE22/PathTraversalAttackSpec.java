@@ -61,7 +61,7 @@ public class PathTraversalAttackSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(sink1)
-                .report("Path traversal - CWE22!")
+                .report("Path traversal:CWE22")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -70,7 +70,7 @@ public class PathTraversalAttackSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(requiredPropagator)
                 .to(sink2)
-                .report("Path traversal attack through File constructor - CWE22!")
+                .report("Path traversal attack through File constructor:CWE22")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

@@ -57,7 +57,7 @@ public class SimpleSQLInjectionSpec implements FluentTQLUserInterface {
                 .from(source)
                 .notThrough(sanitizer)
                 .to(sink)
-                .report("There is a SQL Injection - CWE89!!!")
+                .report("There is a SQL Injection:CWE89")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

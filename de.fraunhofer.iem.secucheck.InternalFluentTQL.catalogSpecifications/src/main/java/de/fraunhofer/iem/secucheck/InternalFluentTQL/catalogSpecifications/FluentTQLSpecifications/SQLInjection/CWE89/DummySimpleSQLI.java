@@ -48,7 +48,7 @@ public class DummySimpleSQLI implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("DummySimpleSQLi")
                 .from(source)
                 .to(sink)
-                .report("There is a SQL Injection - CWE89!!!")
+                .report("There is a SQL Injection:CWE89")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

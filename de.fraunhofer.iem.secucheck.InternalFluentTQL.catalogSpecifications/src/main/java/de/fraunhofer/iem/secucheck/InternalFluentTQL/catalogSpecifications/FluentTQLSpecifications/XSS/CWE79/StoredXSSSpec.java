@@ -61,7 +61,7 @@ public class StoredXSSSpec implements FluentTQLUserInterface {
                 .through(deSanitizer)
                 .notThrough(sanitizer)
                 .to(ServletSinks.servletSinks)
-                .report("Stored XSS - CWE79!")
+                .report("Stored XSS:CWE79")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

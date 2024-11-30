@@ -52,7 +52,7 @@ public class TrustBoundaryViolationSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(sink)
-                .report("Trust Boundary Violation here!!!")
+                .report("Trust Boundary Violation here:CWE501")
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
