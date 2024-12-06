@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications</artifactId>
+    <artifactId>microCatalogSpecifications</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>de.fraunhofer.iem.secucheck</groupId>
-            <artifactId>de.fraunhofer.iem.secucheck.InternalFluentTQL</artifactId>
+            <artifactId>fluentTQL</artifactId>
             <version>${secucheck.version}</version>
         </dependency>
 
