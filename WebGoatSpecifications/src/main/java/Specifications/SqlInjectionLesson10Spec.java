@@ -1,6 +1,7 @@
 package Specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -30,7 +31,7 @@ public class SqlInjectionLesson10Spec implements FluentTQLUserInterface {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("SQLInjectionLesson10")
                 .from(source)
                 .to(sink)
-                .report("Webgoat application: Introduction -> SqlInjectionLesson10")
+                .report("Webgoat application: Introduction -> SqlInjectionLesson10", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -78,7 +79,7 @@ public class CWE78_OsCommandInjection implements FluentTQLUserInterface {
                 .from(sourceMethod)
                 .notThrough(sanitizerMethod)
                 .to(sinkMethod)
-                .report("CWE-78 detected: 'OS Command Injection' from untrusted value 'Task newTask'")
+                .report("CWE-78 detected: 'OS Command Injection' from untrusted value 'Task newTask'", CWE.CWE78)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -86,7 +87,7 @@ public class CWE78_OsCommandInjection implements FluentTQLUserInterface {
                 .from(sourceMethod)
                 .notThrough(sanitizerMethod)
                 .to(sinkMethod2)
-                .report("CWE-78 detected: 'OS Command Injection' from untrusted value 'Task newTask'")
+                .report("CWE-78 detected: 'OS Command Injection' from untrusted value 'Task newTask'", CWE.CWE78)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

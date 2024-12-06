@@ -2,6 +2,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sinks.ServletSinks;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -61,7 +62,7 @@ public class StoredXSSSpec implements FluentTQLUserInterface {
                 .through(deSanitizer)
                 .notThrough(sanitizer)
                 .to(ServletSinks.servletSinks)
-                .report("Stored XSS - CWE79!")
+                .report("Stored XSS", CWE.CWE79)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

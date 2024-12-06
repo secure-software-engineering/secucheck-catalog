@@ -2,6 +2,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.*;
@@ -55,7 +56,7 @@ public class CommandInjectionSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(requiredPropagator)
                 .to(sink)
-                .report("Command Injection - CWE77!")
+                .report("Command Injection", CWE.CWE77)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

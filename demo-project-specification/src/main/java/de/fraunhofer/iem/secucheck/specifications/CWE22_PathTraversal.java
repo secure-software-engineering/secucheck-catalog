@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -67,7 +68,7 @@ public class CWE22_PathTraversal implements FluentTQLUserInterface {
                 .from(sourceMethod)
                 .notThrough(sanitizerMethod)
                 .to(sinkMethod)
-                .report("CWE-22 detected: Path Traversal from untrusted value 'Task newTask'")
+                .report("CWE-22 detected: Path Traversal from untrusted value 'Task newTask'", CWE.CWE22)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

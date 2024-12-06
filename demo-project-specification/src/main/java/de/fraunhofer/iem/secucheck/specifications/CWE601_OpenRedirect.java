@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -82,7 +83,7 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF1")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'String page'")
+                .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'String page'", CWE.CWE601)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -91,14 +92,14 @@ public class CWE601_OpenRedirect implements FluentTQLUserInterface {
                 .through(rp1)
                 .through(rp2)
                 .to(sinkMethod)
-                .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'TaskList requestItems'")
+                .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'TaskList requestItems'", CWE.CWE601)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
         TaintFlowQuery myTF3 = new TaintFlowQueryBuilder("CWE601_OpenRedirect_TF3")
                 .from(sourceMethod3)
                 .to(sinkMethod)
-                .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'HttpServletRequest request'")
+                .report("CWE-601 detected: URL Redirection to Untrusted Site ('Open Redirect') from untrusted value 'HttpServletRequest request'", CWE.CWE601)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -51,14 +52,14 @@ public class CWE643_XpathInjection implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE643_XpathInjection_TF1")
                 .from(source1)
                 .to(sink1)
-                .report("CWE-634 detected: XPath Injection from untrusted value 'getPartameter()'")
+                .report("CWE-643 detected: XPath Injection from untrusted value 'getPartameter()'", CWE.CWE643)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
         TaintFlowQuery myTF2 = new TaintFlowQueryBuilder("CWE643_XpathInjection_TF2")
                 .from(source2)
                 .to(sink1)
-                .report("CWE-634 detected: XPath Injection from untrusted value 'getParameterValues()'")
+                .report("CWE-643 detected: XPath Injection from untrusted value 'getParameterValues()'", CWE.CWE643)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

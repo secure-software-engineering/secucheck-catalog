@@ -3,6 +3,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sinks.LdapSinks;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
@@ -43,7 +44,7 @@ public class LDAPInjectionSpec implements FluentTQLUserInterface {
         TaintFlowQuery ldapInjectionSpecification = new TaintFlowQueryBuilder("LDAPInjection_CWE90")
                 .from(ServletSources.servletSources).notThrough(sanitizer)
                 .to(LdapSinks.sinksLdapinjection)
-                .report("LDAP-Injection CWE-90!")
+                .report("LDAP-Injection", CWE.CWE90)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

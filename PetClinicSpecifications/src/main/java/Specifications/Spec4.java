@@ -1,6 +1,7 @@
 package Specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.*;
@@ -33,7 +34,7 @@ public class Spec4 implements FluentTQLUserInterface {
                 .from(source)
                 .through(requiredProp)
                 .to(sink)
-                .report("H-Injection 4")
+                .report("H-Injection 4", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

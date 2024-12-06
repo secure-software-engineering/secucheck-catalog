@@ -3,6 +3,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sinks.ServletSinks;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -51,7 +52,7 @@ public class ReflexiveXSSSpec implements FluentTQLUserInterface {
                 .through(deSanitizer)
                 .notThrough(sanitizer)
                 .to(ServletSinks.servletSinks)
-                .report("Reflexive XSS - CWE79 !")
+                .report("Reflexive XSS", CWE.CWE79)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

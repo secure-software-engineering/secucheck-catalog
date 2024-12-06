@@ -3,6 +3,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sinks.LogInjectionSinks;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -52,7 +53,7 @@ public class LogInjectionSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(deSanitizer)
                 .to(LogInjectionSinks.logInjectionSinks)
-                .report("Log-Injection CWE-117!")
+                .report("Log-Injection", CWE.CWE117)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -60,7 +61,7 @@ public class LogInjectionSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(LogInjectionSinks.logInjectionSinks)
-                .report("Log-Injection CWE-117!")
+                .report("Log-Injection", CWE.CWE117)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

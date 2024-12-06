@@ -1,6 +1,7 @@
 package Specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -44,21 +45,21 @@ public class SqlInjectionLesson5aSpec implements FluentTQLUserInterface {
         TaintFlowQuery taintFlow1 = new TaintFlowQueryBuilder("SQLInjectionLesson5a_TF1")
                 .from(source1)
                 .to(sink)
-                .report("Webgoat application: Introduction -> SqlInjectionLesson5a TF1")
+                .report("Webgoat application: Introduction -> SqlInjectionLesson5a TF1", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
         TaintFlowQuery taintFlow2 = new TaintFlowQueryBuilder("SQLInjectionLesson5a_TF2")
                 .from(source2)
                 .to(sink)
-                .report("Webgoat application: Introduction -> SqlInjectionLesson5a TF2")
+                .report("Webgoat application: Introduction -> SqlInjectionLesson5a TF2", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
         TaintFlowQuery taintFlow3 = new TaintFlowQueryBuilder("SQLInjectionLesson5a_TF3")
                 .from(source3)
                 .to(sink)
-                .report("Webgoat application: Introduction -> SqlInjectionLesson5a TF3")
+                .report("Webgoat application: Introduction -> SqlInjectionLesson5a TF3", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

@@ -3,6 +3,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sinks.XMLSinks;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -42,7 +43,7 @@ public class XMLInjectionSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(XMLSinks.sinksXMLinjection)
-                .report("XML-Injection here!!!")
+                .report("XML-Injection here!!!", CWE.CWE91)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

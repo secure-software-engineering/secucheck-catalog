@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FluentTQLSpecifications.NoSQLInjection.CWE943;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSet;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
@@ -70,7 +71,7 @@ public class NoSQLInjectionInSpringBoot implements FluentTQLUserInterface {
                 .notThrough(sanitizer)                    //sanitizer
                 .through(requiredPropogator)            //requires propagator
                 .to(sink)                                //sink methods
-                .report("No-SQL-Injection - CWE943!")        //report message
+                .report("No-SQL-Injection", CWE.CWE943)        //report message
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

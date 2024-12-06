@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FluentTQLSpecifications.SQLInjection.CWE89;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.AnalysisEntryPoint;
@@ -48,7 +49,7 @@ public class DummySimpleSQLI implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("DummySimpleSQLi")
                 .from(source)
                 .to(sink)
-                .report("There is a SQL Injection - CWE89!!!")
+                .report("There is a SQL Injection", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

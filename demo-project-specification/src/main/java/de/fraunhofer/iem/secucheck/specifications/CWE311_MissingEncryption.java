@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -59,7 +60,7 @@ public class CWE311_MissingEncryption implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE311_MissingEncryption")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-311 detected: Missing Encryption of Sensitive Data from 'Task newTask'")
+                .report("CWE-311 detected: Missing Encryption of Sensitive Data from 'Task newTask'", CWE.CWE311)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

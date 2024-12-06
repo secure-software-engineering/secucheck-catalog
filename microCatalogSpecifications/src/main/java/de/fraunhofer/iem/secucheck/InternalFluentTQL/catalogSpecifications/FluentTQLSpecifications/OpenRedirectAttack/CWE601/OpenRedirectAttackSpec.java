@@ -2,6 +2,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.QueriesSet;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
@@ -56,7 +57,7 @@ public class OpenRedirectAttackSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(sink1)
-                .report("Open-Redirect - CWE601!")
+                .report("Open-Redirect", CWE.CWE601)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -64,7 +65,7 @@ public class OpenRedirectAttackSpec implements FluentTQLUserInterface {
                 .from(source4)
                 .notThrough(sanitizer)
                 .to(sink2)
-                .report("Open-Redirect - CWE601!!!")
+                .report("Open-Redirect", CWE.CWE601)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

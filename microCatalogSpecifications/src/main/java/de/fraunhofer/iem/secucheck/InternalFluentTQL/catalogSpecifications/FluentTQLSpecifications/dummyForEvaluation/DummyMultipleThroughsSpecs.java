@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FluentTQLSpecifications.dummyForEvaluation;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
@@ -88,7 +89,7 @@ public class DummyMultipleThroughsSpecs implements FluentTQLUserInterface {
                 .through(rp9)
                 .through(rp10)
                 .to(sink)
-                .report("There is a Dummy SQL Injection - CWE89!!!")
+                .report("There is a Dummy SQL Injection", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

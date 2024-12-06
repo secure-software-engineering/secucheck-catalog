@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -71,21 +72,21 @@ public class CWE89_SqlInjection implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF1")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String pattern'")
+                .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String pattern'", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
         TaintFlowQuery myTF2 = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF2")
                 .from(sourceMethod2)
                 .to(sinkMethod)
-                .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String shortname'")
+                .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String shortname'", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
         TaintFlowQuery myTF3 = new TaintFlowQueryBuilder("CWE89_SqlInjection_TF3")
                 .from(sourceMethod2)
                 .to(sinkMethod2)
-                .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String shortname'")
+                .report("CWE-89 detected: 'SQL Injection' from untrusted value 'String shortname'", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

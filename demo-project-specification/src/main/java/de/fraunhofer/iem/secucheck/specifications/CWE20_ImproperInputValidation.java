@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
@@ -58,7 +59,7 @@ public class CWE20_ImproperInputValidation implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE20_ImproperInputValidation")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-20 detected: Improper Input Validation from 'User user'")
+                .report("CWE-20 detected: Improper Input Validation from 'User user'", CWE.CWE20)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

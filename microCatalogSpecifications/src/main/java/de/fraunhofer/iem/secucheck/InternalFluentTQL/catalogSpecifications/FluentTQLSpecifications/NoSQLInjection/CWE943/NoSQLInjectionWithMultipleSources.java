@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FluentTQLSpecifications.NoSQLInjection.CWE943;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -81,7 +82,7 @@ public class NoSQLInjectionWithMultipleSources implements FluentTQLUserInterface
                 .from(source2).notThrough(sanitizer).through(requiredPropagator1).to(sink)
                 .and()
                 .from(source3).notThrough(sanitizer).through(requiredPropagator1).to(sink)
-                .report("There is a No-SQL-Injection (CWE943) with multiple sources")
+                .report("There is a No-SQL-Injection (CWE943) with multiple sources", CWE.CWE943)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

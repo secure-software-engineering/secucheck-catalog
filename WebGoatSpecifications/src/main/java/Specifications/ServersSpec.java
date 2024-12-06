@@ -1,6 +1,7 @@
 package Specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -37,7 +38,7 @@ public class ServersSpec implements FluentTQLUserInterface {
                 .from(source)
                 .through(propagator)
                 .to(sink)
-                .report("Webgoat application: Mitigation -> Server")
+                .report("Webgoat application: Mitigation -> Server", CWE.CWE89)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

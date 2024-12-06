@@ -2,6 +2,7 @@ package de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.Flue
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.catalogSpecifications.FuentTQLRepositories.Sources.ServletSources;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodSelector;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.QueriesSet;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
@@ -61,7 +62,7 @@ public class PathTraversalAttackSpec implements FluentTQLUserInterface {
                 .from(ServletSources.servletSources)
                 .notThrough(sanitizer)
                 .to(sink1)
-                .report("Path traversal - CWE22!")
+                .report("Path traversal", CWE.CWE22)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
@@ -70,7 +71,7 @@ public class PathTraversalAttackSpec implements FluentTQLUserInterface {
                 .notThrough(sanitizer)
                 .through(requiredPropagator)
                 .to(sink2)
-                .report("Path traversal attack through File constructor - CWE22!")
+                .report("Path traversal attack through File constructor", CWE.CWE22)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 

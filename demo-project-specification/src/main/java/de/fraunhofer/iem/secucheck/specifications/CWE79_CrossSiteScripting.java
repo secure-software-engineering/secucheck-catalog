@@ -1,6 +1,7 @@
 package de.fraunhofer.iem.secucheck.specifications;
 
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CONSTANTS.LOCATION;
+import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.CWE;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.MethodConfigurator;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.TaintFlowQueryBuilder;
 import de.fraunhofer.iem.secucheck.InternalFluentTQL.dsl.annotations.FluentTQLSpecificationClass;
@@ -67,7 +68,7 @@ public class CWE79_CrossSiteScripting implements FluentTQLUserInterface {
         TaintFlowQuery myTF = new TaintFlowQueryBuilder("CWE79_CrossSiteScripting")
                 .from(sourceMethod)
                 .to(sinkMethod)
-                .report("CWE-79 detected: Cross-site Scripting from untrusted value 'String pattern'")
+                .report("CWE-79 detected: Cross-site Scripting from untrusted value 'String pattern'", CWE.CWE79)
                 .at(LOCATION.SOURCEANDSINK)
                 .build();
 
