@@ -31,7 +31,7 @@ public class XPATHInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForXPath(java.lang.String)");
+    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForXPath(java.lang.String)", "CWE-643");
 
     /**
      * Returns the Internal FluentTQL specification

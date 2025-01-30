@@ -17,31 +17,58 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 public class LdapSinks {
     // These are sink methods for XPath injection. The list is created based on: https://github.com/julianthome/joanaudit/blob/master/config/sinks.json
     @InFlowParam(parameterID = {1})
-    public static final Method sink1 = new MethodSelector("javax.naming.directory.DirContext: javax.naming.NamingEnumeration search(java.lang.String, java.lang.String, javax.naming.directory.SearchControls)");
+    public static final Method sink1 = new MethodSelector(
+            "javax.naming.directory.DirContext: javax.naming.NamingEnumeration search(java.lang.String, java.lang.String, javax.naming.directory.SearchControls)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink2 = new MethodSelector("javax.naming.directory.DirContext: javax.naming.NamingEnumeration search(java.lang.String, java.lang.String, java.lang.Object[], javax.naming.directory.SearchControls)");
+    public static final Method sink2 = new MethodSelector(
+            "javax.naming.directory.DirContext: javax.naming.NamingEnumeration search(java.lang.String, java.lang.String, java.lang.Object[], javax.naming.directory.SearchControls)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink3 = new MethodSelector("com.novell.ldap.LDAPConnection: void connect(java.lang.String, int)");
+    public static final Method sink3 = new MethodSelector(
+            "com.novell.ldap.LDAPConnection: void connect(java.lang.String, int)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {2})
-    public static final Method sink4 = new MethodSelector("com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean)");
+    public static final Method sink4 = new MethodSelector(
+            "com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {2})
-    public static final Method sink5 = new MethodSelector("com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean, com.novell.ldap.LDAPSearchConstraints)");
+    public static final Method sink5 = new MethodSelector(
+            "com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean, com.novell.ldap.LDAPSearchConstraints)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {2})
-    public static final Method sink6 = new MethodSelector("com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean, com.novell.ldap.LDAPSearchQueue, com.novell.ldap.LDAPSearchConstraints)");
+    public static final Method sink6 = new MethodSelector(
+            "com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean, com.novell.ldap.LDAPSearchQueue, com.novell.ldap.LDAPSearchConstraints)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {2})
-    public static final Method sink7 = new MethodSelector("com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean, com.novell.ldap.LDAPSearchQueue)");
+    public static final Method sink7 = new MethodSelector(
+            "com.novell.ldap.LDAPConnection: com.novell.ldap.LDAPSearchQueue search(java.lang.String, int, java.lang.String, java.lang.String[], boolean, com.novell.ldap.LDAPSearchQueue)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {2})
-    public static final Method sink8 = new MethodSelector("com.unboundid.ldap.sdk.LDAPInterface: com.unboundid.ldap.sdk.SearchResult search(java.lang.String, com.unboundid.ldap.sdk.SearchScope, java.lang.String)");
+    public static final Method sink8 = new MethodSelector(
+            "com.unboundid.ldap.sdk.LDAPInterface: com.unboundid.ldap.sdk.SearchResult search(java.lang.String, com.unboundid.ldap.sdk.SearchScope, java.lang.String)",
+            "CWE-90"
+    );
 
     @InFlowParam(parameterID = {2})
-    public static final Method sink9 = new MethodSelector("com.unboundid.ldap.sdk.LDAPInterface: com.unboundid.ldap.sdk.SearchResult search(java.lang.String,com.unboundid.ldap.sdk.SearchScope,java.lang.String,java.lang.String[])");
+    public static final Method sink9 = new MethodSelector(
+            "com.unboundid.ldap.sdk.LDAPInterface: com.unboundid.ldap.sdk.SearchResult search(java.lang.String,com.unboundid.ldap.sdk.SearchScope,java.lang.String,java.lang.String[])",
+            "CWE-90"
+    );
 
     /**
      * This MethodSet contains some of the sink methods for LDAP injection.

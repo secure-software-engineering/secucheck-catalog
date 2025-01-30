@@ -16,19 +16,34 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 public class SQLSinks {
     //Below are the few sink methods from SQL.
     @InFlowParam(parameterID = {0})
-    public static final Method sink1 = new MethodSelector("java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)");
+    public static final Method sink1 = new MethodSelector(
+            "java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)",
+            "CWE-89"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink2 = new MethodSelector("java.sql.Statement: int executeUpdate(java.lang.String)");
+    public static final Method sink2 = new MethodSelector(
+            "java.sql.Statement: int executeUpdate(java.lang.String)",
+            "CWE-89"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink3 = new MethodSelector("java.sql.Statement: int executeQuery(java.lang.String, int)");
+    public static final Method sink3 = new MethodSelector(
+            "java.sql.Statement: int executeQuery(java.lang.String, int)",
+            "CWE-89"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink4 = new MethodSelector("java.sql.Statement: long executeLargeUpdate(java.lang.String)");
+    public static final Method sink4 = new MethodSelector(
+            "java.sql.Statement: long executeLargeUpdate(java.lang.String)",
+            "CWE-89"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink5 = new MethodSelector("java.sql.Statement: boolean execute(java.lang.String)");
+    public static final Method sink5 = new MethodSelector(
+            "java.sql.Statement: boolean execute(java.lang.String)",
+            "CWE-89"
+    );
 
     /**
      * This MethodSet contains some of the sink methods in SQL statements.

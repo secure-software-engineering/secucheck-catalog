@@ -17,16 +17,29 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 public class ServletSinks {
     //Below are the few sink methods from Servlet application.
     @InFlowParam(parameterID = {0})
-    public static final Method sink1 = new MethodSelector("java.io.PrintWriter: java.io.PrintWriter append(java.lang.String)");
+    public static final Method sink1 = new MethodSelector(
+            "java.io.PrintWriter: java.io.PrintWriter append(java.lang.String)",
+            "CWE-79"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink2 = new MethodSelector("java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence)");
+    public static final Method sink2 = new MethodSelector(
+            "java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence)",
+            "CWE-79"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink3 = new MethodSelector("java.io.PrintWriter: void print(java.lang.String)");
+    public static final Method sink3 = new MethodSelector(
+            "java.io.PrintWriter: void print(java.lang.String)",
+            "CWE-79"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink4 = new MethodSelector("java.io.PrintWriter: void println(java.lang.String)");
+    public static final Method sink4 = new MethodSelector(
+            "java.io.PrintWriter: void println(java.lang.String)",
+            "CWE-79"
+    );
+
     /**
      * This MethodSet contains some of the sink methods in Servlet application.
      */

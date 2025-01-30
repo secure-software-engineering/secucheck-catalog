@@ -27,7 +27,10 @@ public class SimpleSQLInjectionSpec implements FluentTQLUserInterface {
      * Source
      */
     @OutFlowReturnValue
-    public Method source = new MethodSelector("java.util.Scanner: java.lang.String nextLine()");
+    public Method source = new MethodSelector(
+            "java.util.Scanner: java.lang.String nextLine()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * sanitize method is OWASP HTML sanitizer, that sanitizes the special characters, so that SQL Injection does not occur. It is a simple example, For security its better to use
@@ -35,13 +38,19 @@ public class SimpleSQLInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.html.PolicyFactory: java.lang.String sanitize(java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "org.owasp.html.PolicyFactory: java.lang.String sanitize(java.lang.String)",
+            "CWE-89"
+    );
 
     /**
      * Sink
      */
     @InFlowParam(parameterID = {0})
-    public Method sink = new MethodSelector("java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)");
+    public Method sink = new MethodSelector(
+            "java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)",
+            "CWE-89"
+    );
 
     @AnalysisEntryPoint
     public Method entryPoint = new MethodSelector(

@@ -31,7 +31,10 @@ public class ServletSQLInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {1})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForSQL(org.owasp.esapi.codecs.Codec, java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "org.owasp.esapi.Encoder: java.lang.String encodeForSQL(org.owasp.esapi.codecs.Codec, java.lang.String)",
+            "CWE-89"
+    );
 
     /**
      * Returns the Internal FluentTQL specification

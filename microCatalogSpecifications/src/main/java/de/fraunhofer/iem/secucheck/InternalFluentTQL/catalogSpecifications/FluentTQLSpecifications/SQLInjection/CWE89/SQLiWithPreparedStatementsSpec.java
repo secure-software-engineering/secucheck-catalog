@@ -27,37 +27,37 @@ public class SQLiWithPreparedStatementsSpec implements FluentTQLUserInterface {
     /**
      * encodeForSQL is a OWASP sanitizer that encodes the SQL related data. Therefore, flow should go through this method to avoid vulnerability.
      */
-    public Method sanitizer = new MethodConfigurator("org.owasp.esapi.Encoder: java.lang.String encodeForSQL(org.owasp.esapi.codecs.Codec,java.lang.String)")
+    public Method sanitizer = new MethodConfigurator("org.owasp.esapi.Encoder: java.lang.String encodeForSQL(org.owasp.esapi.codecs.Codec,java.lang.String)", "CWE-89")
             .in().param(1)
             .out().returnValue()
             .configure();
 
-    public Method requiredPropagator1 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String)")
+    public Method requiredPropagator1 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String)", "CWE-89")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public Method requiredPropagator2 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int)")
+    public Method requiredPropagator2 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int)", "CWE-89")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public Method requiredPropagator3 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,java.lang.String[])")
+    public Method requiredPropagator3 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,java.lang.String[])", "CWE-89")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public Method requiredPropagator4 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int[])")
+    public Method requiredPropagator4 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int[])", "CWE-89")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public Method requiredPropagator5 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int)")
+    public Method requiredPropagator5 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int)", "CWE-89")
             .in().param(0)
             .out().returnValue()
             .configure();
 
-    public Method requiredPropagator6 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int,int)")
+    public Method requiredPropagator6 = new MethodConfigurator("java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int,int)", "CWE-89")
             .in().param(0)
             .out().returnValue()
             .configure();

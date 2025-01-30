@@ -27,25 +27,35 @@ public class OpenRedirectAttackSpec implements FluentTQLUserInterface {
      * Source 4
      */
     @OutFlowReturnValue
-    public Method source4 = new MethodSelector("javax.servlet.http.HttpServletRequest: javax.servlet.RequestDispatcher getRequestDispatcher(java.lang.String)");
+    public Method source4 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: javax.servlet.RequestDispatcher getRequestDispatcher(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
     /**
      * redirectTable is a simple redirection table that performs the whitelist input validation.
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("catalog.OpenRedirect.CWE601: java.lang.String redirectTable(java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "catalog.OpenRedirect.CWE601: java.lang.String redirectTable(java.lang.String)",
+            "CWE-601"
+    );
 
     /**
      * Sink 1
      */
     @InFlowParam(parameterID = {0})
-    public Method sink1 = new MethodSelector("javax.servlet.http.HttpServletResponse: void sendRedirect(java.lang.String)");
+    public Method sink1 = new MethodSelector("javax.servlet.http.HttpServletResponse: void sendRedirect(java.lang.String)",
+            "CWE-601"
+    );
 
     /**
      * Sink 2
      */
     @InFlowThisObject
-    public Method sink2 = new MethodSelector("javax.servlet.RequestDispatcher: void forward(javax.servlet.ServletRequest, javax.servlet.ServletResponse)");
+    public Method sink2 = new MethodSelector("javax.servlet.RequestDispatcher: void forward(javax.servlet.ServletRequest, javax.servlet.ServletResponse)",
+            "CWE-601"
+    );
 
     /**
      * Returns the Internal FluentTQL specification

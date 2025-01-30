@@ -32,7 +32,10 @@ public class LogInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForURL(java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "org.owasp.esapi.Encoder: java.lang.String encodeForURL(java.lang.String)",
+            "CWE-117"
+    );
 
     /**
      * decodeFromURL is a OWASP de-sanitizer that decodes the URL. This decodes all the new line and carriage return,
@@ -40,7 +43,10 @@ public class LogInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method deSanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String decodeFromURL(java.lang.String)");
+    public Method deSanitizer = new MethodSelector(
+            "org.owasp.esapi.Encoder: java.lang.String decodeFromURL(java.lang.String)",
+            "CWE-116"
+    );
 
     /**
      * Returns the Internal FluentTQL specification

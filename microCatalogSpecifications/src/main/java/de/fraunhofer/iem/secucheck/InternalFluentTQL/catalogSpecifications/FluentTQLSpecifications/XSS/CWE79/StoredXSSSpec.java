@@ -34,14 +34,17 @@ public class StoredXSSSpec implements FluentTQLUserInterface {
      * getLastComment is a source that returns the sensitive data from the database.
      */
     @OutFlowReturnValue
-    public Method source = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.XSS.CWE79.DatabaseForStoredXSS: java.lang.String getLastComment()");
+    public Method source = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.XSS.CWE79.DatabaseForStoredXSS: java.lang.String getLastComment()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * encodeForHTML is a OWASP sanitizer that encodes the HTML related data. Therefore, flow should go through this method to avoid vulnerability.
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForHTML(java.lang.String)");
+    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForHTML(java.lang.String)", "CWE-79");
 
     /**
      * decodeForHTML is a OWASP de-sanitizer that decodes the HTML related data back to HTML entities. Therefore, flow should not go though this method to avoid
@@ -49,7 +52,7 @@ public class StoredXSSSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method deSanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String decodeForHTML(java.lang.String)");
+    public Method deSanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String decodeForHTML(java.lang.String)", "CWE-79");
 
     /**
      * Returns the Internal FluentTQL specification

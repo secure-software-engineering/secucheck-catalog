@@ -27,26 +27,38 @@ public class NoSQLInjectionWithMultipleSources implements FluentTQLUserInterface
      * First source that takes userName from the user.
      */
     @OutFlowReturnValue
-    public Method source1 = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getUserName()");
+    public Method source1 = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getUserName()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * Second source that takes old password from the user.
      */
     @OutFlowReturnValue
-    public Method source2 = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getOldPassword()");
+    public Method source2 = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getOldPassword()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * Third souce that takes new password from the user.
      */
     @OutFlowReturnValue
-    public Method source3 = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getNewPassword()");
+    public Method source3 = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String getNewPassword()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * sanitizeForMongoDB is user defined simple sanitizer for mongodb.
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String sanitizeForMongoDB(java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionWithTwoSources: java.lang.String sanitizeForMongoDB(java.lang.String)",
+            "CWE-943"
+    );
 
     /**
      * put is a method that the data flow has to go through after sanitizer to form a filer to update the password.
@@ -54,7 +66,10 @@ public class NoSQLInjectionWithMultipleSources implements FluentTQLUserInterface
      */
     @InFlowParam(parameterID = {1})
     @OutFlowThisObject
-    public Method requiredPropagator1 = new MethodSelector("com.mongodb.BasicDBObject: java.lang.Object put(java.lang.Object,java.lang.Object)");
+    public Method requiredPropagator1 = new MethodSelector(
+            "com.mongodb.BasicDBObject: java.lang.Object put(java.lang.Object,java.lang.Object)",
+            "CWE-943"
+    );
 
     /**
      * This put is a method that the data flow has to go through after sanitizer to form a new BasicDBObject password to update the password in mongodb.
@@ -62,13 +77,19 @@ public class NoSQLInjectionWithMultipleSources implements FluentTQLUserInterface
      */
     @InFlowParam(parameterID = {1})
     @OutFlowThisObject
-    public Method requiredPropagator2 = new MethodSelector("com.mongodb.BasicDBObject: com.mongodb.BasicDBObject put(java.lang.String,com.mongodb.BasicDBObject)");
+    public Method requiredPropagator2 = new MethodSelector(
+            "com.mongodb.BasicDBObject: com.mongodb.BasicDBObject put(java.lang.String,com.mongodb.BasicDBObject)",
+            "CWE-943"
+    );
 
     /**
      * updateOne is a sink that updates the password.
      */
     @InFlowParam(parameterID = {0, 1})
-    public Method sink = new MethodSelector("com.mongodb.client.MongoCollection: com.mongodb.client.result.UpdateResult updateOne(org.bson.conversions.Bson,org.bson.conversions.Bson)");
+    public Method sink = new MethodSelector(
+            "com.mongodb.client.MongoCollection: com.mongodb.client.result.UpdateResult updateOne(org.bson.conversions.Bson,org.bson.conversions.Bson)",
+            "CWE-943"
+    );
 
     /**
      * Returns the Internal FluentTQL specification

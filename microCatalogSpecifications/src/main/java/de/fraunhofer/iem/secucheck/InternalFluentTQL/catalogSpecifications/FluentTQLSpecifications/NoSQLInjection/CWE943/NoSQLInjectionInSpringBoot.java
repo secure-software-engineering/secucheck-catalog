@@ -25,13 +25,19 @@ public class NoSQLInjectionInSpringBoot implements FluentTQLUserInterface {
      * Source 1
      */
     @OutFlowParam(parameterID = {0})
-    public Method source1 = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformation(java.lang.String)");
+    public Method source1 = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformation(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * Source 2
      */
     @OutFlowParam(parameterID = {0})
-    public Method source2 = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformationSafely(java.lang.String)");
+    public Method source2 = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: org.springframework.http.ResponseEntity getMyInformationSafely(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * getMyInformation and getMyInformationSafely are source, since both take input from user.
@@ -45,20 +51,29 @@ public class NoSQLInjectionInSpringBoot implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: java.lang.String sanitizeForMongoDB(java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.NoSQLInjection.CWE943.NoSQLInjectionInSpringBoot: java.lang.String sanitizeForMongoDB(java.lang.String)",
+            "CWE-943"
+    );
 
     /**
      * put is a method that the data flow has to go through after sanitizer. If the data flow goes through this method before sanitizer then there will be a security vulnerability.
      */
     @InFlowParam(parameterID = {1})
     @OutFlowThisObject
-    public Method requiredPropogator = new MethodSelector("com.mongodb.BasicDBObject: java.lang.Object put(java.lang.Object,java.lang.Object)");
+    public Method requiredPropogator = new MethodSelector(
+            "com.mongodb.BasicDBObject: java.lang.Object put(java.lang.Object,java.lang.Object)",
+            "CWE-943"
+    );
 
     /**
      * find is a sink that retrieves sensitive information from mongodb.
      */
     @InFlowParam(parameterID = {0})
-    public Method sink = new MethodSelector("com.mongodb.client.MongoCollection: com.mongodb.client.FindIterable find(org.bson.conversions.Bson)");
+    public Method sink = new MethodSelector(
+            "com.mongodb.client.MongoCollection: com.mongodb.client.FindIterable find(org.bson.conversions.Bson)",
+            "CWE-943"
+    );
 
     /**
      * Returns the Internal FluentTQL specification

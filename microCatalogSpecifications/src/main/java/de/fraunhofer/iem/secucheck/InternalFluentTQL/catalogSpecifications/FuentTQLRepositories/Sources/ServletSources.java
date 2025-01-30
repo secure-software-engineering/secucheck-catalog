@@ -17,89 +17,173 @@ public class ServletSources {
     //Below are methods for Servlet application that reads input from the user.
 
     @OutFlowReturnValue
-    public static Method source1 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)");
+    public static Method source1 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source2 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.util.Map getParameterMap()");
+    public static Method source2 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.util.Map getParameterMap()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source3 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String[] getParameterValues(java.lang.String)");
+    public static Method source3 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String[] getParameterValues(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source4 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.util.Enumeration getParameterNames()");
+    public static Method source4 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.util.Enumeration getParameterNames()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source5 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getRequestedSessionId()");
+    public static Method source5 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getRequestedSessionId()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source6 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()");
+    public static Method source6 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source7 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()");
+    public static Method source7 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source8 = new MethodSelector("javax.servlet.http.HttpServletRequest: javax.servlet.http.Cookie[] getCookies()");
+    public static Method source8 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: javax.servlet.http.Cookie[] getCookies()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source9 = new MethodSelector("javax.servlet.ServletRequestWrapper: java.lang.String getParameter(java.lang.String)");
+    public static Method source9 = new MethodSelector(
+            "javax.servlet.ServletRequestWrapper: java.lang.String getParameter(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source10 = new MethodSelector("javax.servlet.http.HttpServletRequest: javax.servlet.ServletInputStream getInputStream()");
+    public static Method source10 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: javax.servlet.ServletInputStream getInputStream()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source11 = new MethodSelector("javax.servlet.ServletRequestWrapper: javax.servlet.ServletInputStream getInputStream()");
+    public static Method source11 = new MethodSelector(
+            "javax.servlet.ServletRequestWrapper: javax.servlet.ServletInputStream getInputStream()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source12 = new MethodSelector("javax.servlet.http.HttpSession: java.lang.String getId()");
+    public static Method source12 = new MethodSelector(
+            "javax.servlet.http.HttpSession: java.lang.String getId()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     //Below are methods for header manipulation in Servlet application.
     @OutFlowReturnValue
-    public static Method source13 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getScheme()");
+    public static Method source13 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getScheme()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source14 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getProtocol()");
+    public static Method source14 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getProtocol()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source15 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getContentType()");
+    public static Method source15 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getContentType()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source16 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getServerName()");
+    public static Method source16 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getServerName()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source17 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getRemoteAddr()");
+    public static Method source17 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getRemoteAddr()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source18 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getRemoteHost()");
+    public static Method source18 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getRemoteHost()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source19 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getRealPath()");
+    public static Method source19 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getRealPath()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source20 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getLocalName()");
+    public static Method source20 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getLocalName()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source21 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getLocalAddr()");
+    public static Method source21 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getLocalAddr()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source22 = new MethodSelector("javax.servlet.ServletRequest: java.lang.String getAuthType()");
+    public static Method source22 = new MethodSelector(
+            "javax.servlet.ServletRequest: java.lang.String getAuthType()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source23 = new MethodSelector("javax.servlet.ServletRequest: javax.servlet.RequestDispatcher getRequestDispatcher(java.lang.String)");
+    public static Method source23 = new MethodSelector(
+            "javax.servlet.ServletRequest: javax.servlet.RequestDispatcher getRequestDispatcher(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source24 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()");
+    public static Method source24 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source25 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()");
+    public static Method source25 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source26 = new MethodSelector("javax.servlet.http.HttpServletRequest: int getContentLength()");
+    public static Method source26 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: int getContentLength()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source27 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getContentType()");
+    public static Method source27 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getContentType()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static Method source28 = new MethodSelector("javax.servlet.http.HttpServletRequest: java.lang.String getMethod()");
+    public static Method source28 = new MethodSelector(
+            "javax.servlet.http.HttpServletRequest: java.lang.String getMethod()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * This MethodSet contains some of the source methods in Servlet application.

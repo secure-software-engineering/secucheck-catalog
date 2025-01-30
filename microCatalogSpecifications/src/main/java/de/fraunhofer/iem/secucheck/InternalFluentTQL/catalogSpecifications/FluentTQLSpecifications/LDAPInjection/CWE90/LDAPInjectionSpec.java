@@ -30,7 +30,7 @@ public class LDAPInjectionSpec implements FluentTQLUserInterface {
     /**
      * encodeForLDAP is OWASP sanitizer that encodes the string to avoid LDAP-injection.
      */
-    public Method sanitizer = new MethodConfigurator("org.owasp.esapi.Encoder: java.lang.String encodeForLDAP(java.lang.String)")
+    public Method sanitizer = new MethodConfigurator("org.owasp.esapi.Encoder: java.lang.String encodeForLDAP(java.lang.String)", "CWE-90")
             .in().param(0)
             .out().returnValue()
             .configure();

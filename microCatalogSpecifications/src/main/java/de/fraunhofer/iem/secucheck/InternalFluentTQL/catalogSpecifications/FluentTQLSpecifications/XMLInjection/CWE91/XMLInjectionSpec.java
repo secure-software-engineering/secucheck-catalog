@@ -31,7 +31,7 @@ public class XMLInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForXML(java.lang.String)");
+    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForXML(java.lang.String)", "CWE-91");
 
     /**
      * Returns the Internal FluentTQL specification

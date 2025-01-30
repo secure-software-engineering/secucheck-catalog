@@ -15,40 +15,76 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 public class XPathSinks {
     // these are sink methods for XPath injection. The list is created based on: https://github.com/julianthome/joanaudit/blob/master/config/sinks.json
     @InFlowParam(parameterID = {0})
-    public static final Method sink1 = new MethodSelector("javax.xml.xpath.XPath: javax.xml.xpath.XPathExpression compile(java.lang.String)");
+    public static final Method sink1 = new MethodSelector(
+            "javax.xml.xpath.XPath: javax.xml.xpath.XPathExpression compile(java.lang.String)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1, 2})
-    public static final Method sink2 = new MethodSelector("javax.xml.xpath.XPath: java.lang.Object evaluate(java.lang.String, org.xml.sax.InputSource, javax.xml.namespace.QName)");
+    public static final Method sink2 = new MethodSelector(
+            "javax.xml.xpath.XPath: java.lang.Object evaluate(java.lang.String, org.xml.sax.InputSource, javax.xml.namespace.QName)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink3 = new MethodSelector("javax.xml.xpath.XPath: java.lang.Object evaluate(java.lang.String, org.xml.sax.InputSource)");
+    public static final Method sink3 = new MethodSelector(
+            "javax.xml.xpath.XPath: java.lang.Object evaluate(java.lang.String, org.xml.sax.InputSource)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink4 = new MethodSelector("javax.xml.xpath.XPathExpression: java.lang.Object evaluate(java.lang.Object, javax.xml.namespace.QName)");
+    public static final Method sink4 = new MethodSelector(
+            "javax.xml.xpath.XPathExpression: java.lang.Object evaluate(java.lang.Object, javax.xml.namespace.QName)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink5 = new MethodSelector("javax.xml.xpath.XPath: java.lang.String evaluate(java.lang.String, java.lang.Object)");
+    public static final Method sink5 = new MethodSelector(
+            "javax.xml.xpath.XPath: java.lang.String evaluate(java.lang.String, java.lang.Object)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1, 2})
-    public static final Method sink6 = new MethodSelector("javax.xml.xpath.XPath: java.lang.Object evaluate(java.lang.String, java.lang.Object, javax.xml.namespace.QName)");
+    public static final Method sink6 = new MethodSelector(
+            "javax.xml.xpath.XPath: java.lang.Object evaluate(java.lang.String, java.lang.Object, javax.xml.namespace.QName)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink7 = new MethodSelector("org.apache.xpath.XPath: org.apache.xpath.XPath <init>(java.lang.String, javax.xml.transform.SourceLocator, org.apache.xml.utils.PrefixResolver, int)");
+    public static final Method sink7 = new MethodSelector(
+            "org.apache.xpath.XPath: org.apache.xpath.XPath <init>(java.lang.String, javax.xml.transform.SourceLocator, org.apache.xml.utils.PrefixResolver, int)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink8 = new MethodSelector("org.apache.xpath.XPath: org.apache.xpath.XPath <init>(java.lang.String, javax.xml.transform.SourceLocator, org.apache.xml.utils.PrefixResolver, int, javax.xml.transform.ErrorListener)");
+    public static final Method sink8 = new MethodSelector(
+            "org.apache.xpath.XPath: org.apache.xpath.XPath <init>(java.lang.String, javax.xml.transform.SourceLocator, org.apache.xml.utils.PrefixResolver, int, javax.xml.transform.ErrorListener)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink9 = new MethodSelector("org.apache.xpath.XPath: org.apache.xpath.XPath <init>(java.lang.String, javax.xml.transform.SourceLocator, org.apache.xml.utils.PrefixResolver, int, javax.xml.transform.ErrorListener, org.apache.xpath.compiler.FunctionTable)");
+    public static final Method sink9 = new MethodSelector(
+            "org.apache.xpath.XPath: org.apache.xpath.XPath <init>(java.lang.String, javax.xml.transform.SourceLocator, org.apache.xml.utils.PrefixResolver, int, javax.xml.transform.ErrorListener, org.apache.xpath.compiler.FunctionTable)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink10 = new MethodSelector("org.apache.commons.jxpath.JXPathContext: java.lang.Object getValue(java.lang.String)");
+    public static final Method sink10 = new MethodSelector(
+            "org.apache.commons.jxpath.JXPathContext: java.lang.Object getValue(java.lang.String)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink11 = new MethodSelector("org.xmldb.api.modules.XPathQueryService: org.xmldb.api.base.ResourceSet query(java.lang.String)");
+    public static final Method sink11 = new MethodSelector(
+            "org.xmldb.api.modules.XPathQueryService: org.xmldb.api.base.ResourceSet query(java.lang.String)",
+            "CWE-643"
+    );
 
     @InFlowParam(parameterID = {0})
-    public static final Method sink12 = new MethodSelector("org.xmldb.api.modules.XMLResource: void setContent(java.lang.Object)");
+    public static final Method sink12 = new MethodSelector(
+            "org.xmldb.api.modules.XMLResource: void setContent(java.lang.Object)",
+            "CWE-643"
+    );
 
     /**
      * This MethodSet contains some of the sink methods for XPATH injection.

@@ -14,22 +14,40 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 @FluentTQLRepositoryClass
 public class ApacheWebloggerSources {
     @OutFlowReturnValue
-    public static final Method source1 = new MethodSelector("org.apache.roller.weblogger.pojos.Weblog: java.lang.String getName()");
+    public static final Method source1 = new MethodSelector(
+            "org.apache.roller.weblogger.pojos.Weblog: java.lang.String getName()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source2 = new MethodSelector("org.apache.roller.weblogger.pojos.Weblog: java.lang.String getTagline()");
+    public static final Method source2 = new MethodSelector(
+            "org.apache.roller.weblogger.pojos.Weblog: java.lang.String getTagline()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source3 = new MethodSelector("org.apache.roller.weblogger.pojos.Weblog: java.lang.String getEmailAddress()");
+    public static final Method source3 = new MethodSelector(
+            "org.apache.roller.weblogger.pojos.Weblog: java.lang.String getEmailAddress()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source4 = new MethodSelector("org.apache.roller.weblogger.pojos.WeblogEntryComment: java.lang.String getContent()");
+    public static final Method source4 = new MethodSelector(
+            "org.apache.roller.weblogger.pojos.WeblogEntryComment: java.lang.String getContent()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source5 = new MethodSelector("org.apache.roller.weblogger.pojos.WeblogEntryComment: java.lang.String getId()");
+    public static final Method source5 = new MethodSelector(
+            "org.apache.roller.weblogger.pojos.WeblogEntryComment: java.lang.String getId()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source6 = new MethodSelector("org.apache.roller.weblogger.config.WebloggerRuntimeConfig: java.lang.String getProperty(java.lang.String)");
+    public static final Method source6 = new MethodSelector(
+            "org.apache.roller.weblogger.config.WebloggerRuntimeConfig: java.lang.String getProperty(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * This MethodSet contains some of the source methods in Weblogger.

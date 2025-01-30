@@ -16,16 +16,28 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 public class LogInjectionSinks {
     //Below are few of the list of sinks for Log-Injection.
     @InFlowParam(parameterID = {0})
-    public static final Method sink1 = new MethodSelector("java.util.logging.Logger: void info(java.lang.String)");
+    public static final Method sink1 = new MethodSelector(
+            "java.util.logging.Logger: void info(java.lang.String)",
+            "CWE-117"
+    );
 
     @InFlowParam(parameterID = {1})
-    public static final Method sink2 = new MethodSelector("java.util.logging.Logger: void log(java.util.logging.Level, java.lang.String)");
+    public static final Method sink2 = new MethodSelector(
+            "java.util.logging.Logger: void log(java.util.logging.Level, java.lang.String)",
+            "CWE-117"
+    );
 
     @InFlowParam(parameterID = {0, 1})
-    public static final Method sink3 = new MethodSelector("java.util.logging.Logger: void entering(java.lang.String, java.lang.String)");
+    public static final Method sink3 = new MethodSelector(
+            "java.util.logging.Logger: void entering(java.lang.String, java.lang.String)",
+            "CWE-117"
+    );
 
     @InFlowParam(parameterID = {0, 1})
-    public static final Method sink4 = new MethodSelector("java.util.logging.Logger: void exiting(java.lang.String, java.lang.String)");
+    public static final Method sink4 = new MethodSelector(
+            "java.util.logging.Logger: void exiting(java.lang.String, java.lang.String)",
+            "CWE-117"
+    );
 
     /**
      * This MethodSet contains some of the sink methods for Log injection.

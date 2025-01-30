@@ -29,7 +29,10 @@ public class CommandInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {1})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForOS(org.owasp.esapi.codecs.Codec, java.lang.String)");
+    public Method sanitizer = new MethodSelector(
+            "org.owasp.esapi.Encoder: java.lang.String encodeForOS(org.owasp.esapi.codecs.Codec, java.lang.String)",
+            "CWE-77"
+    );
 
     /**
      * ProcessBuilder constructor should be called to run the command, but first arguments should be sanitized to
@@ -37,13 +40,19 @@ public class CommandInjectionSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowThisObject
-    public Method requiredPropagator = new MethodSelector("java.lang.ProcessBuilder: void <init>(java.lang.String[])");
+    public Method requiredPropagator = new MethodSelector(
+            "java.lang.ProcessBuilder: void <init>(java.lang.String[])",
+            "CWE-77"
+    );
 
     /**
      * Sink.
      */
     @InFlowThisObject
-    public Method sink = new MethodSelector("java.lang.ProcessBuilder: java.lang.Process start()");
+    public Method sink = new MethodSelector(
+            "java.lang.ProcessBuilder: java.lang.Process start()",
+            "CWE-77"
+    );
 
     /**
      * Returns the Internal FluentTQL specification

@@ -31,7 +31,7 @@ public class ReflexiveXSSSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForHTML(java.lang.String)");
+    public Method sanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String encodeForHTML(java.lang.String)", "CWE-79");
 
     /**
      * decodeForHTML is a OWASP de-sanitizer that decodes the HTML related data back to HTML entities. Therefore, flow should not go though this method to avoid
@@ -39,7 +39,7 @@ public class ReflexiveXSSSpec implements FluentTQLUserInterface {
      */
     @InFlowParam(parameterID = {0})
     @OutFlowReturnValue
-    public Method deSanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String decodeForHTML(java.lang.String)");
+    public Method deSanitizer = new MethodSelector("org.owasp.esapi.Encoder: java.lang.String decodeForHTML(java.lang.String)", "CWE-79");
 
     /**
      * Returns the Internal FluentTQL specification

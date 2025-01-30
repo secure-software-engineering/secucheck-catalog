@@ -14,16 +14,28 @@ import de.fraunhofer.iem.secucheck.InternalFluentTQL.fluentInterface.MethodPacka
 @FluentTQLRepositoryClass
 public class WebgoatSources {
     @OutFlowReturnValue
-    public static final Method source1 = new MethodSelector("org.owasp.webgoat.session.ParameterParser: java.lang.String getRawParameter(java.lang.String, java.lang.String)");
+    public static final Method source1 = new MethodSelector(
+            "org.owasp.webgoat.session.ParameterParser: java.lang.String getRawParameter(java.lang.String, java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source2 = new MethodSelector("org.owasp.webgoat.session.ParameterParser: java.lang.String getStringParameter(java.lang.String, java.lang.String)");
+    public static final Method source2 = new MethodSelector(
+            "org.owasp.webgoat.session.ParameterParser: java.lang.String getStringParameter(java.lang.String, java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source3 = new MethodSelector("org.owasp.webgoat.session.ParameterParser: int getIntParameter(java.lang.String)");
+    public static final Method source3 = new MethodSelector(
+            "org.owasp.webgoat.session.ParameterParser: int getIntParameter(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @OutFlowReturnValue
-    public static final Method source4 = new MethodSelector("org.owasp.webgoat.session.ParameterParser: java.lang.String[] getParameterValues(java.lang.String)");
+    public static final Method source4 = new MethodSelector(
+            "org.owasp.webgoat.session.ParameterParser: java.lang.String[] getParameterValues(java.lang.String)",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * This MethodSet contains some of the source methods in Webgoat.

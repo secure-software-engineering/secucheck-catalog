@@ -20,12 +20,18 @@ import java.util.List;
 @FluentTQLSpecificationClass
 public class DummyMultipleThroughsSpecs implements FluentTQLUserInterface {
     @OutFlowReturnValue
-    public Method source = new MethodSelector("java.util.Scanner: java.lang.String nextLine()");
+    public Method source = new MethodSelector(
+            "java.util.Scanner: java.lang.String nextLine()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     @InFlowParam(parameterID = {0})
-    public Method sink = new MethodSelector("java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)");
+    public Method sink = new MethodSelector(
+            "java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)",
+            "CWE-89"
+    );
 
-    public Method rp1 = new MethodConfigurator("org.owasp.esapi.Encoder: java.lang.String decodeForHTML(java.lang.String)")
+    public Method rp1 = new MethodConfigurator("org.owasp.esapi.Encoder: java.lang.String decodeForHTML(java.lang.String)", "CWE-79")
             .in().param(0)
             .out().returnValue()
             .configure();

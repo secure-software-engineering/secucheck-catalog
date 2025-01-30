@@ -27,13 +27,19 @@ public class DummySimpleSQLI implements FluentTQLUserInterface {
      * Source
      */
     @OutFlowReturnValue
-    public Method source = new MethodSelector("java.util.Scanner: java.lang.String nextLine()");
+    public Method source = new MethodSelector(
+            "java.util.Scanner: java.lang.String nextLine()",
+            "CWE-20", "CWE-116", "CWE-838", "CWE-138"
+    );
 
     /**
      * Sink
      */
     @InFlowParam(parameterID = {0})
-    public Method sink = new MethodSelector("java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)");
+    public Method sink = new MethodSelector(
+            "java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)",
+    "CWE-89"
+    );
 
     @AnalysisEntryPoint
     public Method entryPoint = new MethodSelector(

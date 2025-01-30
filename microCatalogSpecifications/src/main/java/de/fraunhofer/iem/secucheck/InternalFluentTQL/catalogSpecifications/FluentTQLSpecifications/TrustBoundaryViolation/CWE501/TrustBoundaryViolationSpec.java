@@ -31,7 +31,7 @@ public class TrustBoundaryViolationSpec implements FluentTQLUserInterface {
      * This is a sanitizer for this example that authenticate the username and then returns the valid username. If authentication fails then
      * it returns the null so that user input will not be directly set in session object to avoid trust boundary violation.
      */
-    public Method sanitizer = new MethodConfigurator("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.TrustBoundaryViolation.CWE501.TrustBoundaryViolation: java.lang.String authenticate(java.lang.String,java.lang.String)")
+    public Method sanitizer = new MethodConfigurator("de.fraunhofer.iem.secucheck.InternalFluentTQL.catalog.TrustBoundaryViolation.CWE501.TrustBoundaryViolation: java.lang.String authenticate(java.lang.String,java.lang.String)", "CWE-501")
             .in().param(0).param(1)
             .out().returnValue()
             .configure();
@@ -39,7 +39,7 @@ public class TrustBoundaryViolationSpec implements FluentTQLUserInterface {
     /**
      * sink
      */
-    public Method sink = new MethodConfigurator("javax.servlet.http.HttpSession: void setAttribute(java.lang.String,java.lang.Object)")
+    public Method sink = new MethodConfigurator("javax.servlet.http.HttpSession: void setAttribute(java.lang.String,java.lang.Object)", "CWE-501")
             .in().param(1)
             .configure();
 
