@@ -13,9 +13,6 @@
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
         <secucheck.version>SC-1.2.0</secucheck.version>
     </properties>
 
